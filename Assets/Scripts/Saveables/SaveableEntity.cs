@@ -1,18 +1,41 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript1 : MonoBehaviour
+public class SaveableEntity : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private string id;
+
+    public string Id => id;
+
+    [ContextMenu("Generate Id")]
+    private void GenerateId()
     {
-        
+        id = Guid.NewGuid().ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    // find all iSaveable components on gameobject
+    public object SaveState()
     {
-        
+        var state = new Dictionary<string, object>();
+        foreach(var saveable in GetComponents<iSaveable>())
+        {
+            state[saveable.GetType().ToString()] = saveable.SaveState();
+        }
+        return state;
+    }
+
+    public void LoadState(object state)
+    {
+        var stateDictionary = (Dictionary<string, object>)state;
+        foreach(var saveable in GetComponents<iSaveable>())
+        {
+            string typeName = saveable.GetType().ToString();
+            if(stateDictionary.TryGetValue(typeName, out object savedState))
+            {
+                saveable.LoadState(savedState);
+            }
+        }
     }
 }
