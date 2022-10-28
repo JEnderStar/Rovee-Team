@@ -11,6 +11,7 @@ TagManager:
   - Fire
   - Health
   - Ammo
+  - Checkpoint
   layers:
   - Default
   - TransparentFX
