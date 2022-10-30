@@ -3281,10 +3281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf5913a94e5a441c9b26877da239b89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoCount: 31
+  ammoCount: 0
   maxAmmoCount: 31
   unlimitedAmmo: 0
-  clipCount: 300
+  clipCount: 0
   maxClipCount: 512
   unlimitedClip: 0
   smartReloading: 1

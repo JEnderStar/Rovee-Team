@@ -31,14 +31,14 @@ namespace AuroraFPSRuntime.SystemModules.HealthModules
         // Base object health properties.
         [SerializeField]
         [Slider("minHealth", "maxHealth")]
-        private float health = 100;
+        public float health = 100;
 
         [SerializeField]
         [MinValue(0)]
         private float minHealth = 0;
 
         [SerializeField]
-        private float maxHealth = 100;
+        public float maxHealth = 100;
 
         /// <summary>
         /// Called once when object health become zero.

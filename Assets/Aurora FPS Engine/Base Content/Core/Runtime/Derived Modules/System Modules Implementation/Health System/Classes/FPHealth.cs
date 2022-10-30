@@ -13,13 +13,15 @@ using AuroraFPSRuntime.SystemModules.ControllerModules;
 using AuroraFPSRuntime.SystemModules;
 using AuroraFPSRuntime.SystemModules.HealthModules;
 using UnityEngine;
+using System;
+using Math = AuroraFPSRuntime.CoreModules.Mathematics.Math;
 
 namespace AuroraFPSRuntime
 {
     [HideScriptField]
     [DisallowMultipleComponent]
     [AddComponentMenu("Aurora FPS Engine/System Modules/Health/First Person Health")]
-    public partial class FPHealth : CharacterHealth
+    public partial class FPHealth : CharacterHealth, iSaveable
     {
         // Base character health properties.
         [SerializeField]
@@ -89,5 +91,27 @@ namespace AuroraFPSRuntime
             velocityDamages = value;
         }
         #endregion
+
+        public object SaveState()
+        {
+            return new SaveData()
+            {
+                health = this.health,
+                maxHealth = this.maxHealth
+            };
+        }
+        public void LoadState(object state)
+        {
+            var saveData = (SaveData)state;
+            health = saveData.health;
+            maxHealth = saveData.maxHealth;
+        }
+
+        [Serializable]
+        private struct SaveData
+        {
+            public float health;
+            public float maxHealth;
+        }
     }
 }
