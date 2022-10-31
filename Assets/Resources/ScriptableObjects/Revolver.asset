@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Revolver
   description: Protagonist's Pistol
-  icon: {fileID: 21300000, guid: e32900b4702f6a6428441015b18fd3ed, type: 3}
-  prefab: {fileID: 919132149155446097, guid: 6940fd40d4e0300479ab2c3c4e65c5c2, type: 3}
+  icon: {fileID: 21300000, guid: 9240fb93c838fca4fbcc30c3dd342e63, type: 3}
+  prefab: {fileID: 919132149155446097, guid: d978894795a057c4c959018deeb5a7d6, type: 3}
   magazineSize: 6
   magazineCount: 6
   range: 75
