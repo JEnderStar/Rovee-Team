@@ -32,9 +32,14 @@ public class WeaponShooting : MonoBehaviour
         if (Physics.Raycast(ray, out hit,currentWeaponRange))
         {
             Debug.Log(hit.transform.name);
+            if (hit.transform.tag == "Enemy")
+            {
+                CharacterStats enemyStats = hit.transform.GetComponent<CharacterStats>();
+                enemyStats.TakeDamage(currentWeapon.damage);
+            }
         }
 
-        Instantiate(currentWeapon.muzzleFlashParticles, manager.currentWeaponBarrel);
+        //Instantiate(currentWeapon.muzzleFlashParticles, manager.currentWeaponBarrel);
     }
     private void Shoot()
     {

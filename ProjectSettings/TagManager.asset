@@ -12,6 +12,7 @@ TagManager:
   - Health
   - Ammo
   - Checkpoint
+  - Enemy
   layers:
   - Default
   - TransparentFX
