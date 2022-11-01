@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 107888548}
   - component: {fileID: 107888549}
   - component: {fileID: 107888550}
+  - component: {fileID: 107888551}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -227,7 +228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107888539}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalPosition: {x: -0.335, y: 0.59, z: 4.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -323,8 +324,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentlyEquippedWeapon: 1
   currentWeaponObject: {fileID: 0}
+  currentWeaponBarrel: {fileID: 0}
   WeaponHolderR: {fileID: 944372125}
   defaultWeapon: {fileID: 11400000, guid: c23c4cbc8798faa4ba6832e4cd24c9c4, type: 2}
+--- !u!114 &107888551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107888539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7f254fee3ed004b9bb5292771dd0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &206853235
 PrefabInstance:
   m_ObjectHideFlags: 0
