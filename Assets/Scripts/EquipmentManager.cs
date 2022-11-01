@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
-{
+{   
     private Animator anim;
     private Inventory inventory;
 
