@@ -4,32 +4,46 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
+    public int currentlyEquippedWeapon = 1;
+    public GameObject currentWeaponObject = null;
+
+    public Transform WeaponHolderR = null;
     private Animator anim;
     private Inventory inventory;
+
+    [SerializeField] Weapon defaultWeapon = null;
 
     private void Start()
     {
         GetReferences();
+        InitVariables();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquippedWeapon != 0)
         {
-            SetWeaponAnimation(0, WeaponType.Revolver);
+            // UnequipWeapon();
+            EquipWeapon(inventory.GetItem(0));
         }
     }
 
-    private void SetWeaponAnimation(int weaponStyle, WeaponType weaponType)
+    private void EquipWeapon(Weapon weapon)
     {
-        Weapon weapon = inventory.GetItem(weaponStyle);
-        if (weapon != null)
-        {
-            if (weapon.weaponType == weaponType)
-            {
-                anim.SetInteger("weaponType", (int)weaponType);
-            }
-        }
+        currentlyEquippedWeapon = (int)weapon.weaponStyle;
+        // anim.SetInteger("weaponType", (int)weapon.weaponType);
+        currentWeaponObject = Instantiate(weapon.prefab, WeaponHolderR);
+    }
+
+    private void UnequipWeapon()
+    {
+        anim.SetTrigger("unequipWeapon");
+    }
+
+    private void InitVariables()
+    {
+        inventory.AddItem(defaultWeapon);
+        EquipWeapon(inventory.GetItem(0));
     }
 
     private void GetReferences()
