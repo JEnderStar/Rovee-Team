@@ -16,8 +16,11 @@ MonoBehaviour:
   description: Protagonist's Pistol
   icon: {fileID: 21300000, guid: 9240fb93c838fca4fbcc30c3dd342e63, type: 3}
   prefab: {fileID: 7913593203502509561, guid: 49365b8b50ba88d40a71edb2217fb15e, type: 3}
+  muzzleFlashParticles: {fileID: 1011368238180560876, guid: e38a530a4326e31428ba02b8b36f2bb3,
+    type: 3}
   magazineSize: 6
   magazineCount: 6
+  fireRate: 0.5
   range: 75
   weaponType: 0
   weaponStyle: 0
