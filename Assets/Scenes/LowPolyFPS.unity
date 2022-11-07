@@ -142,6 +142,7 @@ GameObject:
   - component: {fileID: 107888548}
   - component: {fileID: 107888549}
   - component: {fileID: 107888550}
+  - component: {fileID: 107888551}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -325,6 +326,18 @@ MonoBehaviour:
   currentWeaponObject: {fileID: 0}
   WeaponHolderR: {fileID: 944372125}
   defaultWeapon: {fileID: 11400000, guid: c23c4cbc8798faa4ba6832e4cd24c9c4, type: 2}
+--- !u!114 &107888551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107888539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7f254fee3ed004b9bb5292771dd0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &206853235
 PrefabInstance:
   m_ObjectHideFlags: 0
