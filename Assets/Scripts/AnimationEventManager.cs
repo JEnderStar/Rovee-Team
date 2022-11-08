@@ -19,6 +19,7 @@ public class AnimationEventManager : MonoBehaviour
     public void InstantiateWeapon()
     {
         manager.currentWeaponObject = Instantiate(inventory.GetItem(manager.currentlyEquippedWeapon).prefab, manager.WeaponHolderR);
+        manager.currentWeaponBarrel = manager.currentWeaponObject.transform.GetChild(1);
     }
     
     private void GetReferences()
