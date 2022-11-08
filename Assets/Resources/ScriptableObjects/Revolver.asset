@@ -20,7 +20,7 @@ MonoBehaviour:
     type: 3}
   damage: 25
   magazineSize: 6
-  magazineCount: 6
+  storedAmmo: 60
   fireRate: 0.5
   range: 75
   weaponType: 0

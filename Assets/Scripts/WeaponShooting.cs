@@ -5,6 +5,17 @@ using UnityEngine;
 public class WeaponShooting : MonoBehaviour
 {
     private float lastShootTime = 0;
+
+    [SerializeField] private bool canShoot = true;
+
+    [SerializeField] private int primaryCurrentAmmo;
+    [SerializeField] private int primaryCurrentAmmoStorage;
+
+    [SerializeField] private int secondaryCurrentAmmo;
+    [SerializeField] private int secondaryCurrentAmmoStorage;
+
+    [SerializeField] private bool primaryMagazineIsEmpty = false;
+    [SerializeField] private bool secondaryMagazineIsEmpty = false;
     
     private Camera cam;
     private Inventory inventory;
@@ -13,6 +24,7 @@ public class WeaponShooting : MonoBehaviour
     private void Start()
     {
         GetReferences();
+        canShoot = true;
     }
     private void Update()
     {
@@ -43,14 +55,92 @@ public class WeaponShooting : MonoBehaviour
     }
     private void Shoot()
     {
-        Weapon currentWeapon = inventory.GetItem(manager.currentlyEquippedWeapon);
-
-        if(Time.time > lastShootTime + currentWeapon.fireRate)
+        CheckCanShoot(manager.currentlyEquippedWeapon);
+        if (canShoot)
         {
-            Debug.Log("Shoot");
-            lastShootTime = Time.time;
+            Weapon currentWeapon = inventory.GetItem(manager.currentlyEquippedWeapon);
 
-            RaycastShoot(currentWeapon);
+            if (Time.time > lastShootTime + currentWeapon.fireRate)
+            {
+                Debug.Log("Shoot");
+                lastShootTime = Time.time;
+
+                RaycastShoot(currentWeapon);
+                UseAmmo((int)currentWeapon.weaponStyle, 1, 0);
+            }
+        }
+        else
+            Debug.Log("Not enough ammo in magazine");
+    }
+
+    private void UseAmmo(int slot, int currentAmmoUsed, int currentStoredAmmoUsed)
+    {
+        //primary
+        if(slot == 0)
+        {
+            if (primaryCurrentAmmo <= 0)
+            {
+                primaryMagazineIsEmpty = true;
+                CheckCanShoot(manager.currentlyEquippedWeapon);
+            }
+            else
+            {
+            primaryCurrentAmmo -= currentAmmoUsed;
+            primaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+            }
+        }
+
+        //secondary
+        if (slot == 1)
+        {
+            if (secondaryCurrentAmmo <= 0)
+            {
+                secondaryMagazineIsEmpty = true;
+                CheckCanShoot(manager.currentlyEquippedWeapon);
+            }
+            else
+            {
+            secondaryCurrentAmmo -= currentAmmoUsed;
+            secondaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+            }
+        }
+    }
+
+    private void CheckCanShoot(int slot)
+    {
+        //primary
+        if(slot == 0)
+        {
+            if (primaryMagazineIsEmpty)
+                canShoot = false;
+            else
+                canShoot = true;
+        }
+
+        //secondary
+        if(slot == 1)
+        {
+            if (secondaryMagazineIsEmpty)
+                canShoot = false;
+            else
+                canShoot = true;
+        }
+    }
+
+    public void InitAmmo(int slot, Weapon weapon)
+    {
+        //primary
+        if(slot == 0)
+        {
+            primaryCurrentAmmo = weapon.magazineSize;
+            primaryCurrentAmmoStorage = weapon.storedAmmo;
+        }
+
+        //secondary
+        if (slot == 1)
+        {
+            secondaryCurrentAmmo = weapon.magazineSize;
+            primaryCurrentAmmoStorage = weapon.storedAmmo;
         }
     }
 

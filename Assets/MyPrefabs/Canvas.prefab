@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1304909664220031245}
   - component: {fileID: 1304909664220031246}
   m_Layer: 5
-  m_Name: MagazineCountText
+  m_Name: StoredAmmoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1304909665773786795}
   magazineSizeText: {fileID: 1304909666097465623}
-  magazineCountText: {fileID: 1304909664220031246}
+  storedAmmoText: {fileID: 1304909664220031246}
 --- !u!1 &1304909665444183153
 GameObject:
   m_ObjectHideFlags: 0
