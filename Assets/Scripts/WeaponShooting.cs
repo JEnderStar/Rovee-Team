@@ -20,7 +20,8 @@ public class WeaponShooting : MonoBehaviour
     private Camera cam;
     private Inventory inventory;
     private EquipmentManager manager;
-
+    //this line is reserved for Animator
+    private PlayerHUD hud;
     private void Start()
     {
         GetReferences();
@@ -31,6 +32,11 @@ public class WeaponShooting : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             Shoot();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload(manager.currentlyEquippedWeapon);
         }
     }
 
@@ -85,8 +91,9 @@ public class WeaponShooting : MonoBehaviour
             }
             else
             {
-            primaryCurrentAmmo -= currentAmmoUsed;
-            primaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+                primaryCurrentAmmo -= currentAmmoUsed;
+                primaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+                hud.UpdateWeaponAmmoUI(primaryCurrentAmmo, primaryCurrentAmmoStorage);
             }
         }
 
@@ -100,9 +107,81 @@ public class WeaponShooting : MonoBehaviour
             }
             else
             {
-            secondaryCurrentAmmo -= currentAmmoUsed;
-            secondaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+                secondaryCurrentAmmo -= currentAmmoUsed;
+                secondaryCurrentAmmoStorage -= currentStoredAmmoUsed;
+                hud.UpdateWeaponAmmoUI(secondaryCurrentAmmo, secondaryCurrentAmmoStorage);
             }
+        }
+    }
+    private void AddAmmo(int slot, int currentAmmoAdded, int currentStoredAmmoAdded)
+    {
+        //primary
+        if (slot == 0)
+        {
+            primaryCurrentAmmo += currentAmmoAdded;
+            primaryCurrentAmmoStorage += currentStoredAmmoAdded;
+            hud.UpdateWeaponAmmoUI(primaryCurrentAmmo, primaryCurrentAmmoStorage);
+
+        }
+
+        //secondary
+        if (slot == 1)
+        {
+            secondaryCurrentAmmo += currentAmmoAdded;
+            secondaryCurrentAmmoStorage += currentStoredAmmoAdded;
+            hud.UpdateWeaponAmmoUI(secondaryCurrentAmmo, secondaryCurrentAmmoStorage);
+
+        }
+    }
+    private void Reload(int slot)
+    {
+        //primary
+        if(slot == 0)
+        {
+            int ammoToReload = inventory.GetItem(0).magazineSize - primaryCurrentAmmo;
+
+            //if we have enough ammo to reload our magazine
+            if (primaryCurrentAmmoStorage >= ammoToReload)
+            {
+                //if current magazine is full
+                if (primaryCurrentAmmo == inventory.GetItem(0).magazineSize)
+                {
+                    Debug.Log("Magazine is already full!");
+                    return;
+                }
+
+                AddAmmo(slot, ammoToReload, 0);
+                UseAmmo(slot, 0, ammoToReload);
+
+                primaryMagazineIsEmpty = false;
+                CheckCanShoot(slot);
+            }
+            else
+                Debug.Log("Not enough ammo to reload");
+        }
+
+        //secondary
+        if (slot == 1)
+        {
+            int ammoToReload = inventory.GetItem(1).magazineSize - secondaryCurrentAmmo;
+            //if we have enough ammo to reload our magazine
+            if (secondaryCurrentAmmoStorage >= inventory.GetItem(1).magazineSize)
+            {
+                //if current magazine is full
+                if (secondaryCurrentAmmo == inventory.GetItem(1).magazineSize)
+                {
+                    Debug.Log("Magazine is already full!");
+                    return;
+                }
+
+                AddAmmo(slot, ammoToReload, 1);
+                UseAmmo(slot, 1, ammoToReload);
+
+                secondaryMagazineIsEmpty = false;
+                CheckCanShoot(slot);
+            }
+            else
+                Debug.Log("Not enough ammo to reload");
         }
     }
 
@@ -149,5 +228,7 @@ public class WeaponShooting : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
         manager = GetComponent<EquipmentManager>();
+        //reserved for anim
+        hud = GetComponent<PlayerHUD>();
     }
 }
