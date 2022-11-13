@@ -6,7 +6,7 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] private Weapon[] weapons;
 
-    // private WeaponShooting shooting;
+    private WeaponShooting shooting;
 
     private void Start()
     {
@@ -26,7 +26,7 @@ public class Inventory : MonoBehaviour
 
         //Update.weaponUI
 
-        //shooting.InitAmmo((int)newItem.weaponStyle, newItem);
+        shooting.InitAmmo((int)newItem.weaponStyle, newItem);
     }
 
     public void RemoveItem(int index)
@@ -45,6 +45,6 @@ public class Inventory : MonoBehaviour
 
     private void GetReferences()
     {
-        // shooting = GetComponent<WeaponShooting>();
+        shooting = GetComponent<WeaponShooting>();
     }
 }

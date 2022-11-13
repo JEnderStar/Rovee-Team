@@ -317,7 +317,7 @@ Transform:
   m_GameObject: {fileID: 574051869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 1, z: 2}
+  m_LocalScale: {x: 5, y: 1, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 1280311256}
   - component: {fileID: 1280311257}
   - component: {fileID: 1280311258}
+  - component: {fileID: 1280311259}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -724,8 +725,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentlyEquippedWeapon: 1
   currentWeaponObject: {fileID: 0}
+  currentWeaponBarrel: {fileID: 0}
   WeaponHolderR: {fileID: 1371240868}
   defaultWeapon: {fileID: 11400000, guid: c23c4cbc8798faa4ba6832e4cd24c9c4, type: 2}
+--- !u!114 &1280311259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280311248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb7f254fee3ed004b9bb5292771dd0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canShoot: 1
+  primaryCurrentAmmo: 0
+  primaryCurrentAmmoStorage: 0
+  secondaryCurrentAmmo: 0
+  secondaryCurrentAmmoStorage: 0
+  primaryMagazineIsEmpty: 0
+  secondaryMagazineIsEmpty: 0
 --- !u!1001 &1309531950
 PrefabInstance:
   m_ObjectHideFlags: 0

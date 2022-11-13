@@ -57,7 +57,7 @@ public class WeaponShooting : MonoBehaviour
             }
         }
 
-        //Instantiate(currentWeapon.muzzleFlashParticles, manager.currentWeaponBarrel);
+        Instantiate(currentWeapon.muzzleFlashParticles, manager.currentWeaponBarrel);
     }
     private void Shoot()
     {
@@ -219,7 +219,7 @@ public class WeaponShooting : MonoBehaviour
         if (slot == 1)
         {
             secondaryCurrentAmmo = weapon.magazineSize;
-            primaryCurrentAmmoStorage = weapon.storedAmmo;
+            secondaryCurrentAmmoStorage = weapon.storedAmmo;
         }
     }
 

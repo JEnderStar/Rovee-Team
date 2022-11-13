@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : Items
 {
     public GameObject prefab;
-    // public GameObject muzzleFlashParticles;
+    public GameObject muzzleFlashParticles;
     public int damage;
     public int magazineSize;
     public int storedAmmo;

@@ -6,7 +6,7 @@ public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquippedWeapon = 0;
     public GameObject currentWeaponObject = null;
-    // public Transform currentWeaponBarrel = null;
+    public Transform currentWeaponBarrel = null;
 
     public Transform WeaponHolderR = null;
     private Animator anim;
