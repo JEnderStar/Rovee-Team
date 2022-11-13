@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EquipmentManager : MonoBehaviour
 {
-    public int currentlyEquippedWeapon = 1;
+    public int currentlyEquippedWeapon = 0;
     public GameObject currentWeaponObject = null;
-    public Transform currentWeaponBarrel = null;
+    // public Transform currentWeaponBarrel = null;
 
     public Transform WeaponHolderR = null;
     private Animator anim;
@@ -25,16 +25,20 @@ public class EquipmentManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquippedWeapon != 0)
         {
-            // UnequipWeapon();
+            UnequipWeapon();
             EquipWeapon(inventory.GetItem(0));
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2) && currentlyEquippedWeapon != 1)
+        {
+            UnequipWeapon();
+            EquipWeapon(inventory.GetItem(1));
         }
     }
 
     private void EquipWeapon(Weapon weapon)
     {
         currentlyEquippedWeapon = (int)weapon.weaponStyle;
-        // anim.SetInteger("weaponType", (int)weapon.weaponType);
-        currentWeaponObject = Instantiate(weapon.prefab, WeaponHolderR);
+        anim.SetInteger("weaponType", (int)weapon.weaponType);
         hud.UpdateWeaponUI(weapon);
     }
 
@@ -46,7 +50,7 @@ public class EquipmentManager : MonoBehaviour
     private void InitVariables()
     {
         inventory.AddItem(defaultWeapon);
-        EquipWeapon(inventory.GetItem(0));
+        EquipWeapon(inventory.GetItem(1));
     }
 
     private void GetReferences()

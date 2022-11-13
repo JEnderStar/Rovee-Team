@@ -6,7 +6,7 @@ using UnityEngine;
 public class Weapon : Items
 {
     public GameObject prefab;
-    public GameObject muzzleFlashParticles;
+    // public GameObject muzzleFlashParticles;
     public int damage;
     public int magazineSize;
     public int storedAmmo;
@@ -16,5 +16,5 @@ public class Weapon : Items
     public WeaponStyle weaponStyle;
 }
 
-public enum WeaponType { Revolver, Rifle }
-public enum WeaponStyle { Primary, Secondary, Melee}
+public enum WeaponType { Pistol, Rifle }
+public enum WeaponStyle { Primary, Secondary }
