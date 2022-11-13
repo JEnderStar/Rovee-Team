@@ -7,7 +7,7 @@ using TMPro;
 public class WeaponUI : MonoBehaviour
 {
     [SerializeField] private Image icon;
-    [SerializeField] private TextMeshProUGUI magazineSizeText;
+    [SerializeField] TextMeshProUGUI magazineSizeText;
     [SerializeField] private TextMeshProUGUI storedAmmoText;
 
     public void UpdateInfo(Sprite weaponIcon, int magazineSize, int storedAmmo)

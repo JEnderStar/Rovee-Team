@@ -94,6 +94,10 @@ public class WeaponShooting : MonoBehaviour
                 primaryCurrentAmmo -= currentAmmoUsed;
                 primaryCurrentAmmoStorage -= currentStoredAmmoUsed;
                 hud.UpdateWeaponAmmoUI(primaryCurrentAmmo, primaryCurrentAmmoStorage);
+                if (primaryCurrentAmmo <= 0)
+                {
+                    primaryMagazineIsEmpty = true;
+                }
             }
         }
 
@@ -110,6 +114,10 @@ public class WeaponShooting : MonoBehaviour
                 secondaryCurrentAmmo -= currentAmmoUsed;
                 secondaryCurrentAmmoStorage -= currentStoredAmmoUsed;
                 hud.UpdateWeaponAmmoUI(secondaryCurrentAmmo, secondaryCurrentAmmoStorage);
+                if (secondaryCurrentAmmo <= 0)
+                {
+                    secondaryMagazineIsEmpty = true;
+                }
             }
         }
     }
@@ -127,8 +135,8 @@ public class WeaponShooting : MonoBehaviour
         //secondary
         if (slot == 1)
         {
-            secondaryCurrentAmmo += currentAmmoAdded;
-            secondaryCurrentAmmoStorage += currentStoredAmmoAdded;
+            secondaryCurrentAmmo += currentAmmoAdded + 1;
+            secondaryCurrentAmmoStorage += currentStoredAmmoAdded - 1;
             hud.UpdateWeaponAmmoUI(secondaryCurrentAmmo, secondaryCurrentAmmoStorage);
 
         }
