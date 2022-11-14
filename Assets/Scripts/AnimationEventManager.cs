@@ -6,6 +6,7 @@ public class AnimationEventManager : MonoBehaviour
 {
     private Inventory inventory;
     private EquipmentManager manager;
+    private WeaponShooting shooting;
 
     private void Start()
     {
@@ -21,10 +22,21 @@ public class AnimationEventManager : MonoBehaviour
         manager.currentWeaponObject = Instantiate(inventory.GetItem(manager.currentlyEquippedWeapon).prefab, manager.WeaponHolderR);
         manager.currentWeaponBarrel = manager.currentWeaponObject.transform.GetChild(0); 
     }
-    
+
+    public void StartReload()
+    {
+        shooting.canReload = false;
+    }
+
+    public void EndReload()
+    {
+        shooting.canReload = true;
+    }
+
     private void GetReferences()
     {
         inventory = GetComponentInParent<Inventory>();
         manager = GetComponentInParent<EquipmentManager>();
+        shooting = GetComponentInParent<WeaponShooting>();
     }
 }

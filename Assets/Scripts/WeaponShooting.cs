@@ -7,6 +7,7 @@ public class WeaponShooting : MonoBehaviour
     private float lastShootTime = 0;
 
     [SerializeField] private bool canShoot = true;
+    public bool canReload = true;
 
     [SerializeField] private int primaryCurrentAmmo;
     [SerializeField] private int primaryCurrentAmmoStorage;
@@ -20,12 +21,13 @@ public class WeaponShooting : MonoBehaviour
     private Camera cam;
     private Inventory inventory;
     private EquipmentManager manager;
-    //this line is reserved for Animator
+    private Animator anim;
     private PlayerHUD hud;
     private void Start()
     {
         GetReferences();
         canShoot = true;
+        canReload = true;
     }
     private void Update()
     {
@@ -62,7 +64,7 @@ public class WeaponShooting : MonoBehaviour
     private void Shoot()
     {
         CheckCanShoot(manager.currentlyEquippedWeapon);
-        if (canShoot)
+        if (canShoot && canReload)
         {
             Weapon currentWeapon = inventory.GetItem(manager.currentlyEquippedWeapon);
 
@@ -143,54 +145,61 @@ public class WeaponShooting : MonoBehaviour
     }
     private void Reload(int slot)
     {
-        //primary
-        if(slot == 0)
+        if (canReload)
         {
-            int ammoToReload = inventory.GetItem(0).magazineSize - primaryCurrentAmmo;
-
-            //if we have enough ammo to reload our magazine
-            if (primaryCurrentAmmoStorage >= ammoToReload)
+            //primary
+            if (slot == 0)
             {
-                //if current magazine is full
-                if (primaryCurrentAmmo == inventory.GetItem(0).magazineSize)
+                int ammoToReload = inventory.GetItem(0).magazineSize - primaryCurrentAmmo;
+
+                //if we have enough ammo to reload our magazine
+                if (primaryCurrentAmmoStorage >= ammoToReload)
                 {
-                    Debug.Log("Magazine is already full!");
-                    return;
+                    //if current magazine is full
+                    if (primaryCurrentAmmo == inventory.GetItem(0).magazineSize)
+                    {
+                        Debug.Log("Magazine is already full!");
+                        return;
+                    }
+
+                    AddAmmo(slot, ammoToReload, 0);
+                    UseAmmo(slot, 0, ammoToReload);
+
+                    primaryMagazineIsEmpty = false;
+                    CheckCanShoot(slot);
                 }
-
-                AddAmmo(slot, ammoToReload, 0);
-                UseAmmo(slot, 0, ammoToReload);
-
-                primaryMagazineIsEmpty = false;
-                CheckCanShoot(slot);
+                else
+                    Debug.Log("Not enough ammo to reload");
             }
-            else
-                Debug.Log("Not enough ammo to reload");
-        }
 
-        //secondary
-        if (slot == 1)
-        {
-            int ammoToReload = inventory.GetItem(1).magazineSize - secondaryCurrentAmmo;
-            //if we have enough ammo to reload our magazine
-            if (secondaryCurrentAmmoStorage >= inventory.GetItem(1).magazineSize)
+            //secondary
+            if (slot == 1)
             {
-                //if current magazine is full
-                if (secondaryCurrentAmmo == inventory.GetItem(1).magazineSize)
+                int ammoToReload = inventory.GetItem(1).magazineSize - secondaryCurrentAmmo;
+                //if we have enough ammo to reload our magazine
+                if (secondaryCurrentAmmoStorage >= inventory.GetItem(1).magazineSize)
                 {
-                    Debug.Log("Magazine is already full!");
-                    return;
+                    //if current magazine is full
+                    if (secondaryCurrentAmmo == inventory.GetItem(1).magazineSize)
+                    {
+                        Debug.Log("Magazine is already full!");
+                        return;
+                    }
+
+                    AddAmmo(slot, ammoToReload, 1);
+                    UseAmmo(slot, 1, ammoToReload);
+
+                    secondaryMagazineIsEmpty = false;
+                    CheckCanShoot(slot);
                 }
-
-                AddAmmo(slot, ammoToReload, 1);
-                UseAmmo(slot, 1, ammoToReload);
-
-                secondaryMagazineIsEmpty = false;
-                CheckCanShoot(slot);
+                else
+                    Debug.Log("Not enough ammo to reload");
             }
-            else
-                Debug.Log("Not enough ammo to reload");
+
+            anim.SetTrigger("reload");
         }
+        else
+            Debug.Log("Can't reload at the moment");
     }
 
     private void CheckCanShoot(int slot)
@@ -236,7 +245,7 @@ public class WeaponShooting : MonoBehaviour
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
         manager = GetComponent<EquipmentManager>();
-        //reserved for anim
+        anim = GetComponentInChildren<Animator>();
         hud = GetComponent<PlayerHUD>();
     }
 }
