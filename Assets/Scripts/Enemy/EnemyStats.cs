@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyStats : CharacterStats
 {
-    [SerializeField] private float damage;
-    [SerializeField] private float attackSpeed;
+    [SerializeField] private int damage;
+    public float attackSpeed;
 
     [SerializeField] private bool canAttack;
 
@@ -13,9 +13,9 @@ public class EnemyStats : CharacterStats
     {
         InitVariables();
     }
-    public void DealDamage()
+    public void DealDamage(CharacterStats statsToDamage)
     {
-        //Damaging Functionality
+        statsToDamage.TakeDamage(damage);
     }
 
     public override void Die()
@@ -26,7 +26,7 @@ public class EnemyStats : CharacterStats
 
     public override void InitVariables()
     {
-        maxHealth = 50;
+        maxHealth = 100;
         SetHealthTo(maxHealth);
         isDead = false;
 
