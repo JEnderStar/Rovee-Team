@@ -11,7 +11,6 @@ public class PlayerPickup : MonoBehaviour
     private Inventory inventory;
     private PlayerStats stats;
     private WeaponShooting shooting;
-    private EquipmentManager equipment;
     
     private void Start()
     {
@@ -68,6 +67,5 @@ public class PlayerPickup : MonoBehaviour
         inventory = GetComponent<Inventory>();
         stats = GetComponent<PlayerStats>();
         shooting = GetComponent<WeaponShooting>();
-        equipment = GetComponent<EquipmentManager>();
     }
 }
