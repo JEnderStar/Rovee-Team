@@ -6,9 +6,13 @@ public class PlayerPickup : MonoBehaviour
 {
     [SerializeField] private float pickupRange;
     [SerializeField] private LayerMask pickupLayer;
+
     private Camera cam;
     private Inventory inventory;
-
+    private PlayerStats stats;
+    private WeaponShooting shooting;
+    private EquipmentManager equipment;
+    
     private void Start()
     {
         GetReferences();
@@ -23,10 +27,38 @@ public class PlayerPickup : MonoBehaviour
             if (Physics.Raycast(ray, out hit,pickupRange, pickupLayer))
             {
                 Debug.Log("Hit: " + hit.transform.name);
-                Weapon newItem = hit.transform.GetComponent<ItemObject>().item as Weapon;
-                inventory.AddItem(newItem);
+                if (hit.transform.GetComponent<ItemObject>().item as Weapon)
+                {
+                    Weapon newItem = hit.transform.GetComponent<ItemObject>().item as Weapon;
+                    inventory.AddItem(newItem);
+                    
+                }
+                else
+                {
+                    Consumable newItem = hit.transform.GetComponent<ItemObject>().item as Consumable;
+                    if(newItem.type == ConsumableType.Food)
+                    {
+                        //Heal
+                        stats.Heal(stats.GetMaxHealth());
+                        Debug.Log("HEALING");
+                    }
+                    else
+                    {
+                        //Ammo
+                        if(inventory.GetItem(0) != null)
+                        {
+                            shooting.InitAmmo(0, inventory.GetItem(0));
+                        }
+                        if(inventory.GetItem(1) != null)
+                        {
+                            shooting.InitAmmo(1, inventory.GetItem(1));
+                        }
+                        Debug.Log("AMMO");
+                    }
+                }
                 Destroy(hit.transform.gameObject);
-            } 
+            }
+
         }
     }
 
@@ -34,5 +66,8 @@ public class PlayerPickup : MonoBehaviour
     {
         cam = GetComponentInChildren<Camera>();
         inventory = GetComponent<Inventory>();
+        stats = GetComponent<PlayerStats>();
+        shooting = GetComponent<WeaponShooting>();
+        equipment = GetComponent<EquipmentManager>();
     }
 }
