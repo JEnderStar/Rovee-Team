@@ -13,7 +13,7 @@ public class WeaponUI : MonoBehaviour
     public void UpdateInfo(Sprite weaponIcon, int magazineSize, int storedAmmo)
     {
         icon.sprite = weaponIcon;
-        magazineSizeText.text = magazineSize.ToString();
+        magazineSizeText.text = magazineSize.ToString(); 
         storedAmmoText.text = storedAmmo.ToString();
     }
 
