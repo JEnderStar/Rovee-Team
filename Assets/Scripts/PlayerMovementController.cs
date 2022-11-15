@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
+    #region
+    public static Transform instance;
+
+    private void Awake()
+    {
+        instance = this.transform;
+    }
+    #endregion
+
     [Header("Move Variables")]
     [SerializeField] float moveSpeed;
     [SerializeField] float walkSpeed;

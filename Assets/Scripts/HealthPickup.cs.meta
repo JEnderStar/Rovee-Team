@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Joystick Pack/Examples/JoystickSetterExample.cs.meta
+guid: 4b4267577643bbe4bad2e4e2069e18a2
+========
+guid: 2ff7295a842966440919bf413b8268b5
+>>>>>>>> lastTestRovee:Assets/Scripts/HealthPickup.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

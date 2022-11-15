@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 3d73bf03f88f371469fd7b43fc97d77e
+<<<<<<<< HEAD:Assets/Joystick Pack/Examples/JoystickSetterExample.cs.meta
+guid: aeaafbed0f3869847a3cfb3c6148400d
+========
+guid: 2ff7295a842966440919bf413b8268b5
+>>>>>>>> lastTestRovee:Assets/Scripts/HealthPickup.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

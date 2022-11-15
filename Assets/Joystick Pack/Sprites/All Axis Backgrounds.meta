@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 8ca78f589dc53fd419c85dd20ea22ade
+<<<<<<<< HEAD:Assets/Joystick Pack/Sprites/All Axis Backgrounds.meta
+guid: 2ffb8cc45c470b040b03dc0397c4456f
+========
+guid: 4dc04fc468847f04d97e352655f7265d
+>>>>>>>> lastTestRovee:Assets/Resources/Animations/Enemy Animations.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

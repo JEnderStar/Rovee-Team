@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: e07e808f11c2c0b4b9af6f59fd101640
+<<<<<<<< HEAD:Assets/Scenes/TEST.meta
+guid: e75655d94dc9d7f4a91ebcd1eb90d73e
+========
+guid: bb974355babf98c4bb9ace52cdfad00b
+>>>>>>>> lastTestRovee:Assets/Scripts/Enemy.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 6f3c65e147711ac449f6bbd5e7da81df
+<<<<<<<< HEAD:Assets/Joystick Pack/Sprites/Handles.meta
+guid: 54c38f7a4d534c74083038732976ee7c
+========
+guid: c8687b812f5351b4392f1f9193035a87
+>>>>>>>> lastTestRovee:Assets/Resources/Enemies.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

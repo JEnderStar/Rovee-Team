@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 5cd74670fd89fe14781fc23ec16015e1
+<<<<<<<< HEAD:Assets/Joystick Pack.meta
+guid: 2ce934286d4fed74eb0e3a290d9ad352
+========
+guid: b883717d0097c164c8e9fe7732199c99
+>>>>>>>> lastTestRovee:Assets/Scenes/LastTestFPS.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

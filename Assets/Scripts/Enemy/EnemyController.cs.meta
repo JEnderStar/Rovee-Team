@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Joystick Pack/Scripts/Base/Joystick.cs.meta
+guid: 79029562562d7134cbd2445e84682b71
+========
+guid: 05484767cadf0b04f9c1a925a12a8fee
+>>>>>>>> lastTestRovee:Assets/Scripts/Enemy/EnemyController.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

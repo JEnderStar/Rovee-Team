@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: b9fca4100a7477741b3973b4ff2c405f
+<<<<<<<< HEAD:Assets/Joystick Pack/Scripts/Base/Joystick.cs.meta
+guid: c73f3a75ae636f44e89f1b74224ef5bc
+========
+guid: 05484767cadf0b04f9c1a925a12a8fee
+>>>>>>>> lastTestRovee:Assets/Scripts/Enemy/EnemyController.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

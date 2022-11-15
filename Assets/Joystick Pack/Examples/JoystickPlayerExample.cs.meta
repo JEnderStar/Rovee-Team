@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: a37d705c8e9115e439ec799186182634
+<<<<<<<< HEAD:Assets/Joystick Pack/Examples/JoystickPlayerExample.cs.meta
+guid: 9fdf23dfce1677f41aa03d0f8adb3c22
+========
+guid: 29351abcbcb5cf04f9f7cb6af2db301f
+>>>>>>>> lastTestRovee:Assets/Scripts/Consumable.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

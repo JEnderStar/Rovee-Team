@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Joystick Pack/Scripts/Editor/DynamicJoystickEditor.cs.meta
+guid: 1538ac4532f27514092f6ce6b1fa5d65
+========
+guid: 7a0a699042a1cb548a6293c92986fdc0
+>>>>>>>> lastTestRovee:Assets/Scripts/Enemy/EnemySpawner.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

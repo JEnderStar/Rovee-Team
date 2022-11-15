@@ -33,6 +33,11 @@ public class CharacterStats : MonoBehaviour
         isDead = true;
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     public void SetHealthTo(int healthToSetTo)
     {
         health = healthToSetTo;
@@ -50,6 +55,11 @@ public class CharacterStats : MonoBehaviour
     {
         int healthAfterHeal = health + heal;
         SetHealthTo(healthAfterHeal);
+    }
+
+    public int GetMaxHealth()
+    {
+        return maxHealth;
     }
 
     public virtual void InitVariables()

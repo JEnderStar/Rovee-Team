@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: aaa2c939c0359ac4dbce3f49e8b90252
+<<<<<<<< HEAD:Assets/Joystick Pack/Prefabs/Fixed Joystick.prefab.meta
+guid: 96500337f2067054f93893b1e0f6b35b
+========
+guid: 391b8e8f6faaac14eb78ee95db0404cb
+>>>>>>>> lastTestRovee:Assets/Resources/PickupItems/AmmoPickup.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

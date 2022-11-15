@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Joystick Pack/Examples/JoystickPlayerExample.cs.meta
+guid: 452b8178f271aeb41baf54a22adcd685
+========
+guid: 29351abcbcb5cf04f9f7cb6af2db301f
+>>>>>>>> lastTestRovee:Assets/Scripts/Consumable.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
