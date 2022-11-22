@@ -9,21 +9,19 @@ public class EquipmentManager : MonoBehaviour
     public Transform currentWeaponBarrel = null;
 
     public Transform WeaponHolderR = null;
-    Animator anim;
-    Inventory inventory;
-    PlayerHUD hud;
-    WeaponShooting shooting;
+    private Animator anim;
+    private Inventory inventory;
+    private PlayerHUD hud;
 
-    [SerializeField] Weapon defaultPrimaryWeapon = null;
-    [SerializeField] Weapon defaultSecondaryWeapon = null;
+    [SerializeField] Weapon defaultWeapon = null;
 
-    void Start()
+    private void Start()
     {
         GetReferences();
         InitVariables();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1) && currentlyEquippedWeapon != 0)
         {
@@ -37,43 +35,28 @@ public class EquipmentManager : MonoBehaviour
         }
     }
 
-    public void EquipPrimaryWeapon()
-    {
-        shooting.TouchReload();
-        UnequipWeapon();
-        EquipWeapon(inventory.GetItem(0));
-    }
-    public void EquipSecondaryWeapon()
-    {
-        shooting.TouchReload();
-        UnequipWeapon();
-        EquipWeapon(inventory.GetItem(1));
-    }
-    void EquipWeapon(Weapon weapon)
+    private void EquipWeapon(Weapon weapon)
     {
         currentlyEquippedWeapon = (int)weapon.weaponStyle;
         anim.SetInteger("weaponType", (int)weapon.weaponType);
         hud.UpdateWeaponUI(weapon);
     }
 
-    void UnequipWeapon()
+    private void UnequipWeapon()
     {
         anim.SetTrigger("unequipWeapon");
     }
 
-    void InitVariables()
+    private void InitVariables()
     {
-        inventory.AddItem(defaultPrimaryWeapon);
-        EquipWeapon(inventory.GetItem(0));
-        inventory.AddItem(defaultSecondaryWeapon);
+        inventory.AddItem(defaultWeapon);
         EquipWeapon(inventory.GetItem(1));
     }
 
-    void GetReferences()
+    private void GetReferences()
     {
         anim = GetComponentInChildren<Animator>();
         inventory = GetComponent<Inventory>();
         hud = GetComponent<PlayerHUD>();
-        shooting = GetComponent<WeaponShooting>();
     }
 }
