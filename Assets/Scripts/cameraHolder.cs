@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class cameraHolder : MonoBehaviour
 {
@@ -8,22 +11,49 @@ public class cameraHolder : MonoBehaviour
     [SerializeField] private Transform arms;
     [SerializeField] private Transform body;
 
-    private float xRot;
+    float xRot;
 
-    private void Start()
+
+
+    void Start()
     {
-        LockCursor();
+        // LockCursor();
     }
 
-    private void Update()
+    void Update()
     {
         HandleMouseLook();
     }
 
-    private void HandleMouseLook()
+    public void HandleMouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        float mouseX = 0;
+        float mouseY = 0;
+
+        try
+        {
+            if (Touchscreen.current.touches.Count > 0 && Touchscreen.current.touches[0].isInProgress)
+            {
+                if (EventSystem.current.IsPointerOverGameObject(Touchscreen.current.touches[0].touchId.ReadValue()))
+                {
+                    return;
+                }
+                mouseX = Touchscreen.current.touches[0].delta.ReadValue().x;
+                mouseY = Touchscreen.current.touches[0].delta.ReadValue().y;
+            }
+
+        }
+        catch
+        {
+            mouseX = 0;
+            mouseY = 0;
+        }
+
+        mouseX *= mouseSensitivity;
+        mouseY *= mouseSensitivity;
 
         xRot -= mouseY;
         xRot = Mathf.Clamp(xRot, -90, 90);

@@ -7,39 +7,40 @@ public class PlayerMovementController : MonoBehaviour
     #region
     public static Transform instance;
 
-    private void Awake()
+    void Awake()
     {
         instance = this.transform;
     }
     #endregion
 
     [Header("Move Variables")]
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float walkSpeed;
-    [SerializeField] private float runSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float walkSpeed;
+    [SerializeField] float runSpeed;
+    [SerializeField] float jumpForce;
 
-    private Vector3 moveDirection = Vector3.zero;
+    Vector3 moveDirection = Vector3.zero;
 
-    private CharacterController controller;
+    CharacterController controller;
 
     [Header("Gravity")]
-    [SerializeField] private float gravity;
-    [SerializeField] private float groundDistance;
-    [SerializeField] private LayerMask groundMask;
-    [SerializeField] private bool isCharacterGrounded = false;
-    private Vector3 velocity = Vector3.zero;
+    [SerializeField] float gravity;
+    [SerializeField] float groundDistance;
+    [SerializeField] LayerMask groundMask;
+    [SerializeField] bool isCharacterGrounded = false;
+    Vector3 velocity = Vector3.zero;
 
-    private Animator anim;
+    public VariableJoystick joystick;
+    Animator anim;
 
-    private void Start()
+    void Start()
     {
         GetReferences();
 
         InitVariables();
     }
 
-    private void Update()
+    void Update()
     {
         HandleIsGrounded();
         HandleJumping();
@@ -47,12 +48,18 @@ public class PlayerMovementController : MonoBehaviour
         HandleRunning();
         HandleMovement();
         HandleAnimations();
+        TouchHandleRunning();
     }
 
-    private void HandleMovement()
+    void HandleMovement()
     {
+        /*
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
+        */
+
+        float moveX = joystick.Horizontal;
+        float moveZ = joystick.Vertical;
 
         moveDirection = new Vector3(moveX, 0, moveZ);
         moveDirection = moveDirection.normalized;
@@ -61,7 +68,7 @@ public class PlayerMovementController : MonoBehaviour
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
     }
 
-    private void HandleRunning()
+    void HandleRunning()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -73,7 +80,19 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void HandleAnimations()
+    public void TouchHandleRunning()
+    {
+        if (joystick.Vertical >= (float)0.8)
+        {
+            moveSpeed = runSpeed;
+        }
+        if (joystick.Vertical <= (float)0.8)
+        {
+            moveSpeed = walkSpeed;
+        }
+    }
+
+    void HandleAnimations()
     {
         if(moveDirection == Vector3.zero)
         {
@@ -89,12 +108,12 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void HandleIsGrounded()
+    void HandleIsGrounded()
     {
         isCharacterGrounded = Physics.CheckSphere(transform.position, groundDistance, groundMask);
     }
 
-    private void HandleGravity()
+    void HandleGravity()
     {
         if (isCharacterGrounded && velocity.y < 0)
         {
@@ -104,7 +123,7 @@ public class PlayerMovementController : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
     }
 
-    private void HandleJumping()
+    void HandleJumping()
     {
         if (Input.GetKeyDown(KeyCode.Space) && isCharacterGrounded)
         {
@@ -112,13 +131,21 @@ public class PlayerMovementController : MonoBehaviour
         }
     }
 
-    private void GetReferences()
+    public void HandleTouchJumping()
+    {
+        if (isCharacterGrounded)
+        {
+            velocity.y += Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+    }
+
+    void GetReferences()
     {
         controller = GetComponent<CharacterController>();
         anim = GetComponentInChildren<Animator>();
     }
 
-    private void InitVariables()
+    void InitVariables()
     {
         moveSpeed = walkSpeed;
     }
