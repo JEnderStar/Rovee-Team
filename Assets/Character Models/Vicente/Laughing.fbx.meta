@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 97ed4e585130dff4388b15e62a4ebc5a
+guid: 7f85c7200779f3d4c8ea4284b9797779
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable:
@@ -11,7 +11,7 @@ ModelImporter:
     materialImportMode: 2
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -40,7 +40,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: 0
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 293
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
