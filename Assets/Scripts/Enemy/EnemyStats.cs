@@ -30,7 +30,7 @@ public class EnemyStats : CharacterStats
         SetHealthTo(maxHealth);
         isDead = false;
 
-        damage = 10;
+        damage = 3;
         attackSpeed = 1.5f;
         canAttack = true;
     }

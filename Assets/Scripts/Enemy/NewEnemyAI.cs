@@ -5,13 +5,19 @@ using UnityEngine.AI;
 
 public class NewEnemyAI : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    NavMeshAgent agent;
 
-    public Transform player;
+    Transform player;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+
+    EnemyStats stats = null;
+    private Animator anim = null;
+
+    private float timeOfLastAttack = 0;
+    private bool hasStopped = false;
 
     //Patrolling
     public Vector3 walkPoint;
@@ -21,7 +27,7 @@ public class NewEnemyAI : MonoBehaviour
     //Attacking
     public float timeBetweenAttacks;
     bool alreadyAttacked;
-    public GameObject projectile;
+    //public GameObject projectile;
 
     //States
     public float sightRange, attackRange;
@@ -31,6 +37,8 @@ public class NewEnemyAI : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        stats = GetComponent<EnemyStats>();
+        anim = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -39,17 +47,17 @@ public class NewEnemyAI : MonoBehaviour
         playerInSightRange = Physics.CheckSphere(transform.position, sightRange, whatIsPlayer);
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-        if(!playerInSightRange && !playerInAttackRange)
+        if (!playerInSightRange && !playerInAttackRange)
         {
             Patroling();
         }
 
-        if(playerInSightRange && !playerInAttackRange)
+        if (playerInSightRange && !playerInAttackRange)
         {
             ChasePlayer();
         }
 
-        if(playerInAttackRange && playerInSightRange)
+        if (playerInAttackRange && playerInSightRange)
         {
             AttackPlayer();
         }
@@ -65,12 +73,13 @@ public class NewEnemyAI : MonoBehaviour
         if (walkPointSet)
         {
             agent.SetDestination(walkPoint);
+            anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
         }
 
         Vector3 distanceToWalkPoint = transform.position - walkPoint;
 
         //Walkpoint reached
-        if(distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < 1f)
         {
             walkPointSet = false;
         }
@@ -93,37 +102,53 @@ public class NewEnemyAI : MonoBehaviour
     private void ChasePlayer()
     {
         agent.SetDestination(player.position);
+        anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
     }
 
+    //public Transform projectilePosition;
     private void AttackPlayer()
     {
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
+        anim.SetFloat("Speed", 0f);
 
         transform.LookAt(player);
-        /*
+
         if (!alreadyAttacked)
         {
+            /*
             //Attack code here
-            Rigidbody rb = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<Rigidbody>();
-            rb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            Rigidbody rb = Instantiate(projectile, projectilePosition.position, Quaternion.identity).GetComponent<Rigidbody>();
+            rb.AddForce(transform.forward * 50f, ForceMode.Impulse);
             rb.AddForce(transform.up * 8f, ForceMode.Impulse);
+            */
+            //AttackPlayer(targetStats);
             alreadyAttacked = true;
-            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+            Invoke(nameof(ResetAttack), stats.attackSpeed);
         }
-        */
+
     }
 
     private void ResetAttack()
     {
         alreadyAttacked = false;
+        CharacterStats targetStats = player.GetComponent<CharacterStats>();
+
+        attackingPlayer(targetStats);
+
     }
+    void attackingPlayer(CharacterStats statsToDamage)
+    {
+        anim.SetTrigger("attack");
+        stats.DealDamage(statsToDamage);
+    }
+
 
     public void TakeDamage(int damage)
     {
         health -= damage;
 
-        if (health <= 0) 
+        if (health <= 0)
         {
             Invoke(nameof(DestroyEnemy), 0.5f);
         }
@@ -131,7 +156,7 @@ public class NewEnemyAI : MonoBehaviour
 
     private void DestroyEnemy()
     {
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     private void OnDrawGizmosSelected()
