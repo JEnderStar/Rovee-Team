@@ -22,18 +22,17 @@ public class cameraHolder : MonoBehaviour
 
     void Update()
     {
-        // HandleMouseLook();
+        HandleMouseLook();
     }
 
-    public void HandleMouseLook(float mouseX, float mouseY)
+    public void HandleMouseLook()
     {
         //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        /*
         float mouseX = 0;
         float mouseY = 0;
-        
+
         try
         {
             if (Touchscreen.current.touches.Count > 0 && Touchscreen.current.touches[0].isInProgress)
@@ -52,7 +51,6 @@ public class cameraHolder : MonoBehaviour
             mouseX = 0;
             mouseY = 0;
         }
-        */
 
         mouseX *= mouseSensitivity;
         mouseY *= mouseSensitivity;
