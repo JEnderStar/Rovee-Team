@@ -27,8 +27,8 @@ public class cameraHolder : MonoBehaviour
 
     public void HandleMouseLook(float mouseX, float mouseY)
     {
-        //float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        //float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // mouseX = Input.GetAxis("Mouse X") * Time.deltaTime;
+        // mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime;
 
         /*
         float mouseX = 0;

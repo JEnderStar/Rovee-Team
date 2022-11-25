@@ -14,24 +14,31 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject player;
     public GameObject dialogueUI;
+    public GameObject HUDUI;
+    public GameObject interact;
 
     public Text npcName;
     public Text npcDialogueBox;
     public Text playerResponse;
 
-
+    
     // Start is called before the first frame update
     void Start()
     {
         dialogueUI.SetActive(false);
     }
 
-    void OnMouseOver()
+    void Update()
+    {
+        Interact();
+    }
+
+    void Interact()
     {
         distance = Vector3.Distance(player.transform.position, this.transform.position);
-        if(distance <= 2.5f)
+        if(distance <= 0.5f)
         {
-            if(Input.GetAxis("Mouse ScrollWheel") < 0f)
+            if (Input.GetAxis("Mouse ScrollWheel") < 0f)
             {
                 curResponseTracker++;
                 if(curResponseTracker >= npc.playerDialogue.Length - 1)
@@ -85,20 +92,92 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
+    }
 
-        void StartConversation()
+    void StartConversation()
+    {
+        isTalking = true;
+        curResponseTracker = 0;
+        dialogueUI.SetActive(true);
+        HUDUI.SetActive(false);
+        npcName.text = npc.name;
+        npcDialogueBox.text = npc.dialogue[0];
+    }
+
+    void EndDialogue()
+    {
+        isTalking = false;
+        dialogueUI.SetActive(false);
+        HUDUI.SetActive(true);
+    }
+
+    public void startInteract()
+    {
+        if (distance <= 2f)
         {
-            isTalking = true;
-            curResponseTracker = 0;
-            dialogueUI.SetActive(true);
-            npcName.text = npc.name;
-            npcDialogueBox.text = npc.dialogue[0];
+            if (isTalking == false)
+            {
+                StartConversation();
+            }
         }
+    }
 
-        void EndDialogue()
+    public void endInteract()
+    {
+        if (distance <= 2f)
         {
-            isTalking = false;
-            dialogueUI.SetActive(false);
+            if (isTalking == true)
+            {
+                EndDialogue();
+            }
+        }
+    }
+
+    public void scrollUp()
+    {
+        if (distance <= 2f)
+        {
+            curResponseTracker--;
+            if (curResponseTracker < 0)
+            {
+                curResponseTracker = 0;
+            }
+        }
+    }
+
+    public void scrollDown()
+    {
+        if (distance <= 2f)
+        {
+            curResponseTracker++;
+            if (curResponseTracker >= npc.playerDialogue.Length - 1)
+            {
+                curResponseTracker = npc.playerDialogue.Length - 1;
+            }
+        }
+    }
+
+    public void selectChoice()
+    {
+        if (distance <= 2f)
+        {
+            if (curResponseTracker == 0 && npc.playerDialogue.Length >= 0)
+            {
+                playerResponse.text = npc.playerDialogue[0];
+                npcDialogueBox.text = npc.dialogue[1];
+            }
+
+            else if (curResponseTracker == 1 && npc.playerDialogue.Length >= 1)
+            {
+                playerResponse.text = npc.playerDialogue[1];
+                npcDialogueBox.text = npc.dialogue[2];
+            }
+
+            else if (curResponseTracker == 2 && npc.playerDialogue.Length >= 2)
+            {
+                playerResponse.text = npc.playerDialogue[2];
+                npcDialogueBox.text = npc.dialogue[3];
+            }
         }
     }
 }
