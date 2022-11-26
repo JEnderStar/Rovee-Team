@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4634425182076040941}
   - component: {fileID: 8570872246166154718}
   - component: {fileID: 80113038071563109}
-  - component: {fileID: 4682846920336885674}
   m_Layer: 0
   m_Name: Revolver_Bullet
   m_TagString: Untagged
@@ -116,16 +115,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4682846920336885674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6579817699833796408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c16e191b9fdc25d448518802660cc441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  life: 3
