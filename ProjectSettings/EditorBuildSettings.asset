@@ -8,9 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: 024ffa857440bd847ae4ba7083ec63fc
+  - enabled: 0
+    path: Assets/Scenes/1.5-FindRoom.unity
+    guid: 6533a21053ab67e42a98f56d26832858
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/LastTestFPS.unity
+    guid: 0324f73d4ceca9f4b9059995d9dbd8a5
   m_configObjects:
     Global Input Config Asset Key: {fileID: 11400000, guid: dd3b0d883a9ee4388b0ec876b51e7bbd,
       type: 2}

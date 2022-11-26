@@ -47,7 +47,7 @@ public class PlayerMovementController : MonoBehaviour
         HandleGravity();
         HandleRunning();
         HandleMovement();
-        HandleAnimations();
+        // HandleAnimations();
         TouchHandleRunning();
     }
 

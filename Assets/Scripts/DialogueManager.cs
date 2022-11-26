@@ -30,9 +30,12 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        Interact();
+        // Interact();
+        distance = Vector3.Distance(player.transform.position, this.transform.position);
+        UpdateDialogue();
     }
 
+    /*
     void Interact()
     {
         distance = Vector3.Distance(player.transform.position, this.transform.position);
@@ -93,6 +96,28 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+    */
+
+    void UpdateDialogue()
+    {
+        if (distance <= 2f)
+        {
+            if (curResponseTracker == 0 && npc.playerDialogue.Length >= 0)
+            {
+                playerResponse.text = npc.playerDialogue[0];
+            }
+
+            else if (curResponseTracker == 1 && npc.playerDialogue.Length >= 1)
+            {
+                playerResponse.text = npc.playerDialogue[1];
+            }
+
+            else if (curResponseTracker == 2 && npc.playerDialogue.Length >= 2)
+            {
+                playerResponse.text = npc.playerDialogue[2];
+            }
+        }
+    }
 
     void StartConversation()
     {
@@ -107,6 +132,7 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         isTalking = false;
+        curResponseTracker = 0;
         dialogueUI.SetActive(false);
         HUDUI.SetActive(true);
     }
