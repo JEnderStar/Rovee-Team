@@ -5937,7 +5937,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - name: Wave 1
-    enemiesAmount: 50
+    enemiesAmount: 30
     delay: 1
     enemy: {fileID: 3422754876254898478, guid: 2e8ba3b1ce6f8f042ae5893a401359fb, type: 3}
   timeBetweenWaves: 3
