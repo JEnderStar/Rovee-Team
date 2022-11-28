@@ -19,7 +19,7 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
     [SerializeField] CanvasGroup HUD;
-    [SerializeField] Image img;
+    // [SerializeField] Image img;
 
     [SerializeField] GameObject interact;
     [SerializeField] GameObject OpenDoor;
@@ -68,7 +68,7 @@ public class InteractEnabler : MonoBehaviour
         for (float i = 0; i <= 1; i += Time.deltaTime)
         {
             // set color with i as alpha
-            img.color = new Color(0, 0, 0, i);
+            // img.color = new Color(0, 0, 0, i);
             fadeOut = true;
             if(i >= 0.99)
             {
@@ -77,7 +77,7 @@ public class InteractEnabler : MonoBehaviour
             yield return null;
         }
     }
-
+    
     void fadeUI()
     {
         if (fadeOut)
