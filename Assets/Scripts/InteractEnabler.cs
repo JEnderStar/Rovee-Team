@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class InteractEnabler : MonoBehaviour
 {
+    bool fadeOut = false;
+
     float checkDistance1;
     float checkDistance2;
     float checkDistance3;
@@ -16,13 +18,15 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject npc2;
     [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
+    [SerializeField] CanvasGroup HUD;
     [SerializeField] Image img;
 
     [SerializeField] GameObject interact;
     [SerializeField] GameObject OpenDoor;
-
+    
     void Update()
     {
+        fadeUI();
         checkDistance();
     }
 
@@ -55,23 +59,36 @@ public class InteractEnabler : MonoBehaviour
     public void openTheDoor()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        // StartCoroutine(FadeImage());
     }
 
-    IEnumerator FadeImage(bool fadeAway)
+    IEnumerator FadeImage()
     {
-        // fade from opaque to transparent
-        if (fadeAway)
+        // loop over 1 second backwards
+        for (float i = 0; i <= 1; i += Time.deltaTime)
         {
-            // loop over 1 second backwards
-            for (float i = 0; i <= 1; i += Time.deltaTime)
+            // set color with i as alpha
+            img.color = new Color(0, 0, 0, i);
+            fadeOut = true;
+            if(i >= 0.99)
             {
-                // set color with i as alpha
-                img.color = new Color(0, 0, 0, i);
-                if(i == 1)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            yield return null;
+        }
+    }
+
+    void fadeUI()
+    {
+        if (fadeOut)
+        {
+            if(HUD.alpha >= 0)
+            {
+                HUD.alpha -= Time.deltaTime;
+                if(HUD.alpha == 0)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                    fadeOut = false;
                 }
-                yield return null;
             }
         }
     }
