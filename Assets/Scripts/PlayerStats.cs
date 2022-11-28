@@ -30,6 +30,7 @@ public class PlayerStats : CharacterStats
     {
         base.Die();
         ui.SetActiveHud(false);
+        Time.timeScale = 0f;
     }
 
     private void Update()
