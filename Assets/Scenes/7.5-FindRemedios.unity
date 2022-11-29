@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.20391473, g: 0.35267603, b: 0.47568578, a: 1}
+  m_IndirectSpecularColor: {r: 0.57770085, g: 0.6152049, b: 0.60846514, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -10754,7 +10754,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1415626141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10799,7 +10799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2059560422}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InteractEnabler, Assembly-CSharp
         m_MethodName: openTheDoor
         m_Mode: 1
@@ -16041,16 +16041,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2059560410}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac2862b3621cde1438896fa2d09331a5, type: 3}
+  m_Script: {fileID: 11500000, guid: c8099a14b70ab6b46a2f39b4b9a62a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   npc1: {fileID: 1472265151}
   npc2: {fileID: 677294854}
-  npc3: {fileID: 0}
   door: {fileID: 0}
   HUD: {fileID: 946988005}
   interact: {fileID: 844697364}
-  OpenDoor: {fileID: 1415626140}
 --- !u!1 &2062898601
 GameObject:
   m_ObjectHideFlags: 0

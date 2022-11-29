@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public class PlayerMovementController : MonoBehaviour, iSaveable
 {
     #region
     public static Transform instance;
@@ -137,6 +138,35 @@ public class PlayerMovementController : MonoBehaviour
         {
             velocity.y += Mathf.Sqrt(jumpForce * -2f * gravity);
         }
+    }
+    public object SaveState()
+    {
+        
+        return new SaveData
+        {
+            playerPosition = new float[]
+            {
+                transform.position.x,
+                transform.position.y,
+                transform.position.z
+            }
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        Vector3 playerVector;
+        var saveData = (SaveData)state;
+        playerVector.x = saveData.playerPosition[0];
+        playerVector.y = saveData.playerPosition[1];
+        playerVector.z = saveData.playerPosition[2];
+        transform.position = playerVector;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public float[] playerPosition;
     }
 
     void GetReferences()

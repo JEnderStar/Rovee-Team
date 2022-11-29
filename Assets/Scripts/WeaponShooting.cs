@@ -1,19 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponShooting : MonoBehaviour
+public class WeaponShooting : MonoBehaviour, iSaveable
 {
     private float lastShootTime = 0;
 
     [SerializeField] bool canShoot = true;
     public bool canReload = true;
 
-    [SerializeField] public int primaryCurrentAmmo;
-    [SerializeField] public int primaryCurrentAmmoStorage;
+    public int primaryCurrentAmmo;
+    public int primaryCurrentAmmoStorage;
 
-    [SerializeField] public int secondaryCurrentAmmo;
-    [SerializeField] public int secondaryCurrentAmmoStorage;
+    public int secondaryCurrentAmmo;
+    public int secondaryCurrentAmmoStorage;
 
     [SerializeField] bool primaryMagazineIsEmpty = false;
     [SerializeField] bool secondaryMagazineIsEmpty = false;
@@ -308,6 +309,35 @@ public class WeaponShooting : MonoBehaviour
             secondaryCurrentAmmo = weapon.magazineSize;
             secondaryCurrentAmmoStorage = weapon.storedAmmo;
         }
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            primaryCurrentAmmo = this.primaryCurrentAmmo,
+            primaryCurrentAmmoStorage = this.primaryCurrentAmmoStorage,
+            secondaryCurrentAmmo = this.secondaryCurrentAmmo,
+            secondaryCurrentAmmoStorage = this.secondaryCurrentAmmoStorage
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        primaryCurrentAmmo = saveData.primaryCurrentAmmo;
+        primaryCurrentAmmoStorage = saveData.primaryCurrentAmmoStorage;
+        secondaryCurrentAmmo = saveData.secondaryCurrentAmmo;
+        secondaryCurrentAmmoStorage = saveData.secondaryCurrentAmmoStorage;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public int primaryCurrentAmmo;
+        public int primaryCurrentAmmoStorage;
+        public int secondaryCurrentAmmo;
+        public int secondaryCurrentAmmoStorage;
     }
 
     void GetReferences()

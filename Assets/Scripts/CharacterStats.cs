@@ -1,11 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour, iSaveable
 {
-    [SerializeField] protected int health;
-    [SerializeField] protected int maxHealth;
+    public int health;
+    public int maxHealth;
 
     [SerializeField] protected bool isDead;
 
@@ -67,5 +68,25 @@ public class CharacterStats : MonoBehaviour
         maxHealth = 100;
         SetHealthTo(maxHealth);
         isDead = false;
+    }
+
+    public object SaveState()
+    {
+        return new SaveData()
+        {
+            health = this.health
+        };
+    }
+
+    public void LoadState(object state)
+    {
+        var saveData = (SaveData)state;
+        health = saveData.health;
+    }
+
+    [Serializable]
+    private struct SaveData
+    {
+        public int health;
     }
 }
