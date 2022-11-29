@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponShooting : MonoBehaviour
+public class WeaponShooting : MonoBehaviour, iDataPersistence
 {
     private float lastShootTime = 0;
 
@@ -308,6 +308,22 @@ public class WeaponShooting : MonoBehaviour
             secondaryCurrentAmmo = weapon.magazineSize;
             secondaryCurrentAmmoStorage = weapon.storedAmmo;
         }
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.primaryCurrentAmmo = data.primaryCurrentAmmo;
+        this.primaryCurrentAmmoStorage = data.primaryCurrentAmmoStorage;
+        this.secondaryCurrentAmmo = data.secondaryCurrentAmmo;
+        this.secondaryCurrentAmmoStorage = data.secondaryCurrentAmmoStorage;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.primaryCurrentAmmo = this.primaryCurrentAmmo;
+        data.primaryCurrentAmmoStorage = this. primaryCurrentAmmoStorage;
+        data.secondaryCurrentAmmo = this.secondaryCurrentAmmo;
+        data.secondaryCurrentAmmoStorage = this.secondaryCurrentAmmoStorage;
     }
 
     void GetReferences()

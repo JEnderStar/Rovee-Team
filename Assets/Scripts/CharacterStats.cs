@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterStats : MonoBehaviour
+public class CharacterStats : MonoBehaviour, iDataPersistence
 {
     [SerializeField] protected int health;
     [SerializeField] protected int maxHealth;
@@ -55,6 +55,16 @@ public class CharacterStats : MonoBehaviour
     {
         int healthAfterHeal = health + heal;
         SetHealthTo(healthAfterHeal);
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.health = data.health;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.health = this.health;
     }
 
     public int GetMaxHealth()
