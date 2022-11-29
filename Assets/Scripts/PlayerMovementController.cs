@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour, iDataPersistence
+public class PlayerMovementController : MonoBehaviour
 {
     #region
     public static Transform instance;
@@ -137,16 +137,6 @@ public class PlayerMovementController : MonoBehaviour, iDataPersistence
         {
             velocity.y += Mathf.Sqrt(jumpForce * -2f * gravity);
         }
-    }
-
-    public void LoadData(GameData data)
-    {
-        this.transform.position = data.playerPosition;
-    }
-
-    public void SaveData(GameData data)
-    {
-        data.playerPosition = this.transform.position;
     }
 
     void GetReferences()
