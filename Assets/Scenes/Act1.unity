@@ -8883,7 +8883,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1280311248}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1883.3276, y: 3.28, z: 148.82039}
+  m_LocalPosition: {x: 1885.0254, y: 3.16, z: 157.63745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9133,6 +9133,7 @@ MonoBehaviour:
   hands: {fileID: 2067572652}
   video: {fileID: 123840673}
   video2: {fileID: 1394356598}
+  player: {fileID: 1280311248}
 --- !u!1 &1285903760
 GameObject:
   m_ObjectHideFlags: 0

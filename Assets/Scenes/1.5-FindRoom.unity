@@ -28333,6 +28333,7 @@ MonoBehaviour:
   walls: {fileID: 113238137}
   deco: {fileID: 1093377202}
   lights: {fileID: 1997355420}
+  player: {fileID: 2059560410}
   video: {fileID: 2011781272}
   video1: {fileID: 108063470}
   video2: {fileID: 480390649}

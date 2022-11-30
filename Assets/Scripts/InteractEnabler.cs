@@ -23,6 +23,7 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject walls;
     [SerializeField] GameObject deco;
     [SerializeField] GameObject lights;
+    [SerializeField] GameObject player;
 
     [SerializeField] GameObject video;
     [SerializeField] GameObject video1;
@@ -67,6 +68,7 @@ public class InteractEnabler : MonoBehaviour
     public void openTheDoor()
     {
         Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
+        player.gameObject.GetComponent<PlayerMovementController>().enabled = false;
         lights.SetActive(false);
         HUD.SetActive(false);
         walls.SetActive(false);

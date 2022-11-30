@@ -9,10 +9,13 @@ public class CutsceneTrigger : MonoBehaviour
     public GameObject hands;
     public GameObject video;
     public GameObject video2;
+    public GameObject player;
 
     private void OnTriggerEnter(Collider other)
     {
         this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        player.gameObject.GetComponent<PlayerStats>().enabled = false;
+        player.gameObject.GetComponent<PlayerMovementController>().enabled = false;
         canvas.SetActive(false);
         hands.SetActive(false);
         video.SetActive(true);

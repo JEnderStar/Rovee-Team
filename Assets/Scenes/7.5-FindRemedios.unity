@@ -15980,6 +15980,7 @@ MonoBehaviour:
   npc2: {fileID: 677294854}
   door: {fileID: 941511375}
   HUD: {fileID: 946988002}
+  player: {fileID: 2059560410}
   props: {fileID: 867212538}
   arms: {fileID: 724413314}
   video: {fileID: 1169937382}
