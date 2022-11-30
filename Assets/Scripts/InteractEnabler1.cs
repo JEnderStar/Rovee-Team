@@ -18,15 +18,19 @@ public class InteractEnabler1 : MonoBehaviour
     [SerializeField] GameObject npc2;
     // [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
-    [SerializeField] CanvasGroup HUD;
+    [SerializeField] GameObject HUD;
     // [SerializeField] Image img;
 
+    [SerializeField] GameObject props;
+    [SerializeField] GameObject arms;
+
+    [SerializeField] GameObject video;
+
     [SerializeField] GameObject interact;
-    // [SerializeField] GameObject OpenDoor;
+    [SerializeField] GameObject OpenDoor;
     
     void Update()
     {
-        fadeUI();
         checkDistance();
     }
 
@@ -45,51 +49,29 @@ public class InteractEnabler1 : MonoBehaviour
             interact.SetActive(false);
         }
 
-        // checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
+        checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
         if(checkDoor <= 1f)
         {
-            // OpenDoor.SetActive(true);
+            OpenDoor.SetActive(true);
         }
         else
         {
-            // OpenDoor.SetActive(false);
+            OpenDoor.SetActive(false);
         }
     }
 
     public void openTheDoor()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // StartCoroutine(FadeImage());
+        Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
+        HUD.SetActive(false);
+        props.SetActive(false);
+        video.SetActive(true);
+        StartCoroutine(finishCut());
     }
 
-    IEnumerator FadeImage()
+    IEnumerator finishCut()
     {
-        // loop over 1 second backwards
-        for (float i = 0; i <= 1; i += Time.deltaTime)
-        {
-            // set color with i as alpha
-            // img.color = new Color(0, 0, 0, i);
-            fadeOut = true;
-            if(i >= 0.99)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            yield return null;
-        }
-    }
-    
-    void fadeUI()
-    {
-        if (fadeOut)
-        {
-            if(HUD.alpha >= 0)
-            {
-                HUD.alpha -= Time.deltaTime;
-                if(HUD.alpha == 0)
-                {
-                    fadeOut = false;
-                }
-            }
-        }
+        yield return new WaitForSeconds(108);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

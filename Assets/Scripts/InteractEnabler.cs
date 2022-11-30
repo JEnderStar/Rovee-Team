@@ -18,15 +18,23 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject npc2;
     [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
-    [SerializeField] CanvasGroup HUD;
-    // [SerializeField] Image img;
+
+    [SerializeField] GameObject HUD;
+    [SerializeField] GameObject walls;
+    [SerializeField] GameObject deco;
+    [SerializeField] GameObject lights;
+
+    [SerializeField] GameObject video;
+    [SerializeField] GameObject video1;
+    [SerializeField] GameObject video2;
+    [SerializeField] GameObject video3;
+    [SerializeField] GameObject video4;
 
     [SerializeField] GameObject interact;
     [SerializeField] GameObject OpenDoor;
     
     void Update()
     {
-        fadeUI();
         checkDistance();
     }
 
@@ -58,38 +66,47 @@ public class InteractEnabler : MonoBehaviour
 
     public void openTheDoor()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        // StartCoroutine(FadeImage());
+        Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
+        lights.SetActive(false);
+        HUD.SetActive(false);
+        walls.SetActive(false);
+        deco.SetActive(false);
+        video.SetActive(true);
+        StartCoroutine(finishCut());
     }
 
-    IEnumerator FadeImage()
+    IEnumerator finishCut()
     {
-        // loop over 1 second backwards
-        for (float i = 0; i <= 1; i += Time.deltaTime)
-        {
-            // set color with i as alpha
-            // img.color = new Color(0, 0, 0, i);
-            fadeOut = true;
-            if(i >= 0.99)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            yield return null;
-        }
+        yield return new WaitForSeconds(39);
+        video.SetActive(false);
+        video1.SetActive(true);
+        StartCoroutine(finishCut1());
     }
-    
-    void fadeUI()
+
+    IEnumerator finishCut1()
     {
-        if (fadeOut)
-        {
-            if(HUD.alpha >= 0)
-            {
-                HUD.alpha -= Time.deltaTime;
-                if(HUD.alpha == 0)
-                {
-                    fadeOut = false;
-                }
-            }
-        }
+        yield return new WaitForSeconds(35);
+        video1.SetActive(false);
+        video2.SetActive(true);
+        StartCoroutine(finishCut2());
+    }
+    IEnumerator finishCut2()
+    {
+        yield return new WaitForSeconds(31);
+        video2.SetActive(false);
+        video3.SetActive(true);
+        StartCoroutine(finishCut3());
+    }
+    IEnumerator finishCut3()
+    {
+        yield return new WaitForSeconds(95);
+        video3.SetActive(false);
+        video4.SetActive(true);
+        StartCoroutine(finishCut4());
+    }
+    IEnumerator finishCut4()
+    {
+        yield return new WaitForSeconds(98);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

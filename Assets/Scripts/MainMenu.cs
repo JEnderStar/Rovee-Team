@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject canvas;
+    [SerializeField] GameObject panel;
     [SerializeField] GameObject idle;
     [SerializeField] GameObject video;
 
@@ -16,6 +17,7 @@ public class MainMenu : MonoBehaviour
     public void PlayGame()
     {
         canvas.SetActive(false);
+        panel.SetActive(false);
         idle.SetActive(false);
         video.SetActive(true);
         StartCoroutine(finishCut());
@@ -31,12 +33,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator finishCut()
     {
-        yield return new WaitForSeconds(2);
-        switchScene();
-    }
-
-    void switchScene()
-    {
+        yield return new WaitForSeconds(86);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
