@@ -15,7 +15,7 @@ MonoBehaviour:
   name: Rifle
   description: High Damage Weapon
   icon: {fileID: 21300000, guid: 15abb9b7100555a4c984b4f7a1982c65, type: 3}
-  prefab: {fileID: 7045131624623590158, guid: 9fc6bed038a2a614c8b60b39039d12c6, type: 3}
+  prefab: {fileID: 1236447200380388368, guid: 19402cc4ad2ed6b4f945d4be83e6ddfc, type: 3}
   muzzleFlashParticles: {fileID: 1011368238180560876, guid: e38a530a4326e31428ba02b8b36f2bb3,
     type: 3}
   damage: 50
