@@ -24,6 +24,7 @@ public class WeaponShooting : MonoBehaviour, iSaveable
     EquipmentManager manager;
     Animator anim;
     PlayerHUD hud;
+    Recoil recoil_script;
     void Start()
     {
         GetReferences();
@@ -76,6 +77,7 @@ public class WeaponShooting : MonoBehaviour, iSaveable
                 Debug.Log("Shoot");
                 lastShootTime = Time.time;
 
+                recoil_script.RecoilFire();
                 RaycastShoot(currentWeapon);
                 UseAmmo((int)currentWeapon.weaponStyle, 1, 0);
             }
@@ -347,5 +349,6 @@ public class WeaponShooting : MonoBehaviour, iSaveable
         manager = GetComponent<EquipmentManager>();
         anim = GetComponentInChildren<Animator>();
         hud = GetComponent<PlayerHUD>();
+        recoil_script = transform.Find("ArmsPivot/CameraRot/CameraHolder").GetComponent<Recoil>();
     }
 }
