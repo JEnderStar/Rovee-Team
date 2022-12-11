@@ -20,14 +20,18 @@ public class FollowPlayer : MonoBehaviour
     {
         float dist = Vector3.Distance(this.transform.position, myTarget.transform.position);
 
-        if (dist <= myAgent.stoppingDistance)
-        {
-            anim.SetFloat("Speed", 0f, 0.1f, Time.deltaTime);
-        }
-        else if(dist < range)
+        if(dist < range)
         {
             myAgent.destination = myTarget.transform.position;
-            anim.SetFloat("Speed", 1f, 0.1f, Time.deltaTime);
+            anim.SetFloat("Speed", 1f, 0.3f, Time.deltaTime);
+        }
+        if(dist > range)
+        {
+            anim.SetFloat("Speed", 0f);
+        }
+        if(dist <= myAgent.stoppingDistance)
+        {
+            anim.SetFloat("Speed", 0f);
         }
     }
 }
