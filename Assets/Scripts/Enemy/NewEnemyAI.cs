@@ -139,8 +139,12 @@ public class NewEnemyAI : MonoBehaviour
     }
     void attackingPlayer(CharacterStats statsToDamage)
     {
+        int chance = Random.Range(0, 100);
         anim.SetTrigger("attack");
-        stats.DealDamage(statsToDamage);
+        if (chance >= 85)
+        {
+            stats.DealDamage(statsToDamage);
+        }
     }
 
 
