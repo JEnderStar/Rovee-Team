@@ -9,9 +9,11 @@ public class TouchCamera : cameraHolder
     float mouseX;
     float mouseY;
 
+    public FloatingJoystick joysticklook;
+
     public void Update()
     {
-        try
+        /*try
         {
             if (Touchscreen.current.touches.Count > 0 && Touchscreen.current.touches[0].isInProgress)
             {
@@ -21,6 +23,8 @@ public class TouchCamera : cameraHolder
                 }
                 mouseX = Touchscreen.current.touches[0].delta.ReadValue().x;
                 mouseY = Touchscreen.current.touches[0].delta.ReadValue().y;
+                
+
             }
             else
             {
@@ -33,7 +37,9 @@ public class TouchCamera : cameraHolder
         {
             mouseX = 0;
             mouseY = 0;
-        }
+        } */
+        mouseX = joysticklook.Horizontal;
+        mouseY = joysticklook.Vertical;
 
         HandleMouseLook(mouseX, mouseY);
     }
