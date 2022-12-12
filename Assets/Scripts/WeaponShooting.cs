@@ -9,6 +9,11 @@ public class WeaponShooting : MonoBehaviour, iSaveable
 
     [SerializeField] bool canShoot = true;
     public bool canReload = true;
+    private bool isReload = false;
+
+    [SerializeField] AudioSource revolver;
+    [SerializeField] AudioSource rifle;
+    [SerializeField] AudioSource reload;
 
     public int primaryCurrentAmmo;
     public int primaryCurrentAmmoStorage;
@@ -105,6 +110,14 @@ public class WeaponShooting : MonoBehaviour, iSaveable
                 {
                     primaryMagazineIsEmpty = true;
                 }
+                if (!isReload)
+                {
+                    rifle.Play();
+                }
+                else
+                {
+                    isReload = false;
+                }
             }
         }
 
@@ -124,6 +137,14 @@ public class WeaponShooting : MonoBehaviour, iSaveable
                 if (secondaryCurrentAmmo <= 0)
                 {
                     secondaryMagazineIsEmpty = true;
+                }
+                if(!isReload)
+                {
+                    revolver.Play();
+                }
+                else
+                {
+                    isReload = false;
                 }
             }
         }
@@ -177,6 +198,8 @@ public class WeaponShooting : MonoBehaviour, iSaveable
                         return;
                     }
 
+                    isReload = true;
+
                     AddAmmo(slot, ammoToReload, 0);
                     UseAmmo(slot, 0, ammoToReload);
 
@@ -201,6 +224,8 @@ public class WeaponShooting : MonoBehaviour, iSaveable
                         return;
                     }
 
+                    isReload = true;
+
                     AddAmmo(slot, ammoToReload, 1);
                     UseAmmo(slot, 1, ammoToReload);
 
@@ -212,6 +237,7 @@ public class WeaponShooting : MonoBehaviour, iSaveable
             }
 
             anim.SetTrigger("reload");
+            reload.Play();
         }
         else
             Debug.Log("Can't reload at the moment");

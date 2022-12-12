@@ -5,6 +5,7 @@ using UnityEngine;
 public class EquipmentManager : MonoBehaviour
 {
     public int currentlyEquippedWeapon = 0;
+    [SerializeField] AudioSource gunSwitch;
     public GameObject currentWeaponObject = null;
     public Transform currentWeaponBarrel = null;
 
@@ -42,12 +43,14 @@ public class EquipmentManager : MonoBehaviour
         shooting.TouchReload();
         UnequipWeapon();
         EquipWeapon(inventory.GetItem(0));
+        gunSwitch.Play();
     }
     public void EquipSecondaryWeapon()
     {
         shooting.TouchReload();
         UnequipWeapon();
         EquipWeapon(inventory.GetItem(1));
+        gunSwitch.Play();
     }
     void EquipWeapon(Weapon weapon)
     {
