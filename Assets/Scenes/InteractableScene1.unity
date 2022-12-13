@@ -16,7 +16,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 0
-  m_FogColor: {r: 0.80392164, g: 0.9490197, b: 0.9490197, a: 1}
+  m_FogColor: {r: 0.45098042, g: 0.69803923, b: 0.85098046, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.02
   m_LinearFogStart: 0
@@ -3884,7 +3884,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60.62256, y: 114.8981}
+  m_AnchoredPosition: {x: -60.62274, y: 114.8981}
   m_SizeDelta: {x: -1784.1716, y: -782.9785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &682896585
@@ -5269,6 +5269,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canShoot: 1
   canReload: 1
+  revolver: {fileID: 0}
+  rifle: {fileID: 0}
+  reload: {fileID: 0}
   primaryCurrentAmmo: 0
   primaryCurrentAmmoStorage: 0
   secondaryCurrentAmmo: 0
@@ -5288,6 +5291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentlyEquippedWeapon: 1
+  gunSwitch: {fileID: 0}
   currentWeaponObject: {fileID: 0}
   currentWeaponBarrel: {fileID: 0}
   WeaponHolderR: {fileID: 519902225}
@@ -5445,7 +5449,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 930368425}
-  m_LocalRotation: {x: -0, y: 0.93988734, z: -0, w: -0.3414847}
+  m_LocalRotation: {x: -0, y: 0.9280122, z: -0, w: -0.37254998}
   m_LocalPosition: {x: 418.81, y: 0, z: 172.351}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5453,7 +5457,7 @@ Transform:
   - {fileID: 1155456305}
   m_Father: {fileID: 0}
   m_RootOrder: 18
-  m_LocalEulerAnglesHint: {x: 0, y: 219.935, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 223.746, z: 0}
 --- !u!4 &953087842 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2179778115582132524, guid: 6afd93558491a644aa321f16633b1586,
@@ -6021,7 +6025,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61.88867, y: -73.84027}
+  m_AnchoredPosition: {x: -61.888855, y: -73.84027}
   m_SizeDelta: {x: -1844.7, y: -789.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1010393298

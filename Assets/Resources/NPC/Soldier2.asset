@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402dca1f7603cc84b85aeaaa16e7b442, type: 3}
   m_Name: Soldier2
   m_EditorClassIdentifier: 
-  name: Garcia
+  name: Sgt. Garcia
   dialogue:
   - Heneral! Magandang gabi po!
   - 'Nako Heneral, pagod lang po sa pag patrolya. '

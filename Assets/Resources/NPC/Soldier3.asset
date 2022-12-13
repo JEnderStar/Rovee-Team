@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402dca1f7603cc84b85aeaaa16e7b442, type: 3}
   m_Name: Soldier3
   m_EditorClassIdentifier: 
-  name: Ramos
+  name: Sgt. Ramos
   dialogue:
   - Magandang Gabi Heneral!
   - Opo Heneral! Binabantayan po siya ngayon ni Koronel Julian.
