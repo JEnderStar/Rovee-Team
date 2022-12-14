@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -31077,16 +31077,6 @@ MonoBehaviour:
   npc2: {fileID: 1027874702}
   npc3: {fileID: 1171913269}
   door: {fileID: 1651349916}
-  HUD: {fileID: 946988002}
-  walls: {fileID: 113238137}
-  deco: {fileID: 1093377202}
-  lights: {fileID: 1997355420}
-  player: {fileID: 2059560410}
-  video: {fileID: 2011781272}
-  video1: {fileID: 108063470}
-  video2: {fileID: 480390649}
-  video3: {fileID: 1491097540}
-  video4: {fileID: 733698674}
   interact: {fileID: 844697364}
   OpenDoor: {fileID: 1415626140}
 --- !u!114 &2059560423
@@ -31096,7 +31086,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2059560410}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 91c572580f0a29d4aba5af2097c5a223, type: 3}
   m_Name: 
