@@ -10,7 +10,6 @@ public class LoadingScreenStartMenu : MonoBehaviour
     public GameObject LoadingScreen;
     public Slider LoadingBarFill;
 
-    public GameObject npc;
     public TextMeshProUGUI text;
 
     public void LoadScene()
@@ -23,7 +22,6 @@ public class LoadingScreenStartMenu : MonoBehaviour
         AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
 
         LoadingScreen.SetActive(true);
-        npc.SetActive(false);
         while (!operation.isDone)
         {
             float progressValue = Mathf.Clamp01(operation.progress / 0.9f);

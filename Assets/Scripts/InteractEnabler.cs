@@ -19,6 +19,7 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
 
+    /*
     [SerializeField] GameObject HUD;
     [SerializeField] GameObject walls;
     [SerializeField] GameObject deco;
@@ -30,7 +31,7 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject video2;
     [SerializeField] GameObject video3;
     [SerializeField] GameObject video4;
-
+    */
     [SerializeField] GameObject interact;
     [SerializeField] GameObject OpenDoor;
     
@@ -67,6 +68,7 @@ public class InteractEnabler : MonoBehaviour
 
     public void openTheDoor()
     {
+        /*
         Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
         player.gameObject.GetComponent<PlayerMovementController>().enabled = false;
         lights.SetActive(false);
@@ -75,8 +77,11 @@ public class InteractEnabler : MonoBehaviour
         deco.SetActive(false);
         video.SetActive(true);
         StartCoroutine(finishCut());
+        */
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
+    /*
     IEnumerator finishCut()
     {
         yield return new WaitForSeconds(39);
@@ -111,4 +116,5 @@ public class InteractEnabler : MonoBehaviour
         yield return new WaitForSeconds(98);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    */
 }
