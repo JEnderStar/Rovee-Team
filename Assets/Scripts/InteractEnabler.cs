@@ -16,7 +16,7 @@ public class InteractEnabler : MonoBehaviour
 
     [SerializeField] GameObject npc1;
     [SerializeField] GameObject npc2;
-    // [SerializeField] GameObject npc3;
+    [SerializeField] GameObject npc3;
     // [SerializeField] GameObject door;
 
     /*
@@ -44,9 +44,9 @@ public class InteractEnabler : MonoBehaviour
     {
         checkDistance1 = Vector3.Distance(this.transform.position, npc1.transform.position);
         checkDistance2 = Vector3.Distance(this.transform.position, npc2.transform.position);
-        // checkDistance3 = Vector3.Distance(this.transform.position, npc3.transform.position);
+        checkDistance3 = Vector3.Distance(this.transform.position, npc3.transform.position);
 
-        if (checkDistance1 <= 2f || checkDistance2 <= 2f)
+        if (checkDistance1 <= 2f || checkDistance2 <= 2f || checkDistance3 <= 2f)
         {
             interact.SetActive(true);
         }

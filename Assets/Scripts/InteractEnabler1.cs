@@ -16,16 +16,15 @@ public class InteractEnabler1 : MonoBehaviour
 
     [SerializeField] GameObject npc1;
     [SerializeField] GameObject npc2;
-    // [SerializeField] GameObject npc3;
+    /* [SerializeField] GameObject npc3;
     [SerializeField] GameObject door;
     [SerializeField] GameObject HUD;
-    // [SerializeField] Image img;
+    [SerializeField] Image img;
     [SerializeField] GameObject player;
-
     [SerializeField] GameObject props;
     [SerializeField] GameObject arms;
-
     [SerializeField] GameObject video;
+    */
 
     [SerializeField] GameObject interact;
     [SerializeField] GameObject OpenDoor;
@@ -50,6 +49,7 @@ public class InteractEnabler1 : MonoBehaviour
             interact.SetActive(false);
         }
 
+        /*
         checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
         if(checkDoor <= 1f)
         {
@@ -59,21 +59,26 @@ public class InteractEnabler1 : MonoBehaviour
         {
             OpenDoor.SetActive(false);
         }
+        */
     }
 
     public void openTheDoor()
     {
         Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
+        /*
         player.gameObject.GetComponent<PlayerMovementController>().enabled = false;
         HUD.SetActive(false);
         props.SetActive(false);
         video.SetActive(true);
         StartCoroutine(finishCut());
+        */
     }
 
+    /*
     IEnumerator finishCut()
     {
         yield return new WaitForSeconds(108);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    */
 }
