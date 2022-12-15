@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402dca1f7603cc84b85aeaaa16e7b442, type: 3}
-  m_Name: DirectionsRemediosNPC
+  m_Name: WelcomingNPC
   m_EditorClassIdentifier: 
-  name: Villaruel
+  name: 
   dialogue:
-  - Sinabi ko naman sayo, Huwag mo na- Ah Heneral napabisita ka ata?
-  - Si Remedios? Nariyan lang po sa bahay nila sa tapat namin
-  - Walang anuman po Heneral
+  - Heneral! Nandito na tayo ngayon sa Cervantes
+  - Nauna na po yung mga iba at tumutuloy na muna dito sa baryo
+  - Sige po Heneral!
   playerDialogue:
-  - Alam mo ba kung nasaan si Remedios?
-  - Maraming Salamat
+  - Mabuti. Yung mga ibang sundalo nagpapahinga na ba?
+  - Sige, ako'y mauuna na

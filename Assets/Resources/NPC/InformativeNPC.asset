@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Jose
   dialogue:
   - Heneral! Nabalitaan mo na ba?
-  - Inihalal na si Ginoong Mabini bilang Chief Justice ng  Korte Suprema
+  - Ang pag patay kay Heneral Luna sa Cabanatuan?
   - Paalam Heneral!
   playerDialogue:
   - Nabalitaan ang alin?
-  - Sige paalam na
+  - Oo nabalitaan ko na rin

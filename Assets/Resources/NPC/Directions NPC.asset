@@ -15,8 +15,8 @@ MonoBehaviour:
   name: Cuevas
   dialogue:
   - Nasaan na ba yon? Kanina pa ako nandi- Uy Heneral! Ikaw pala iyan
-  - Hindi ko po alam kung nasaan siya ngayon, pero pwede nyo po tanungin si Villaruel
+  - Deretsyuhin nyo lang po hanggang sa makita ninyo ang baryo
   - Sige po Heneral
   playerDialogue:
-  - Alam mo ba kung nasaan si Remedios?
+  - Nasaan ang mga tao dito?
   - Salamat, mauuna na ako
