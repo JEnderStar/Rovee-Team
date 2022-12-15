@@ -6,6 +6,6 @@ public class SunMove : MonoBehaviour
 {
     void Update()
     {
-        transform.Rotate(0.1f, 0.0f, 0.0f, Space.World);
+        transform.Rotate(0.01f, 0.0f, 0.0f, Space.World);
     }
 }

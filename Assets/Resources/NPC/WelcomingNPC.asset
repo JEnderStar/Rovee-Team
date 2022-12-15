@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 402dca1f7603cc84b85aeaaa16e7b442, type: 3}
   m_Name: WelcomingNPC
   m_EditorClassIdentifier: 
-  name: 
+  name: Serrano
   dialogue:
   - Heneral! Nandito na tayo ngayon sa Cervantes
   - Nauna na po yung mga iba at tumutuloy na muna dito sa baryo
