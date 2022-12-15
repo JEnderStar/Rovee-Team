@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43065578, g: 0.59071594, b: 0.65717566, a: 1}
+  m_IndirectSpecularColor: {r: 0.4306556, g: 0.59071535, b: 0.65717435, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -824,9 +824,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 1983546301}
   HUDUI: {fileID: 826369892}
   interact: {fileID: 1942220622}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1165081176}
+  npcDialogueBox: {fileID: 386533082}
+  playerResponse: {fileID: 1959040522}
 --- !u!1 &63803555 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1311290861401530, guid: 312b31977ed9b2d48a14849ebb8c7fb3,
@@ -1661,80 +1661,6 @@ Transform:
   m_Father: {fileID: 1750744781}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &208708127
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 443.96918
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000166893
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 128.19832
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9914595
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.13041511
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 14.987
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_Name
-      value: T-Pose (Remedios)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5866666021909216657, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 34681eee7d276794eac074cab559c445, type: 2}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 11c586dcda3f7fa4fa6d4e5b449d40d2, type: 3}
 --- !u!1 &227524468
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3716,7 @@ RectTransform:
   - {fileID: 1096371607}
   - {fileID: 1533576284}
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5743,9 +5669,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 1983546301}
   HUDUI: {fileID: 826369892}
   interact: {fileID: 1942220622}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1165081176}
+  npcDialogueBox: {fileID: 386533082}
+  playerResponse: {fileID: 1959040522}
 --- !u!136 &1008828143
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -8200,7 +8126,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8941,7 +8867,7 @@ Transform:
   m_Children:
   - {fileID: 227524469}
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1 &1529091726
 GameObject:
@@ -9886,7 +9812,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1680206585
 GameObject:
@@ -10445,7 +10371,7 @@ Transform:
   - {fileID: 389539354}
   - {fileID: 1463524645}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1757919184
 PrefabInstance:
@@ -13055,7 +12981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4303844821561524, guid: 312b31977ed9b2d48a14849ebb8c7fb3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13225,7 +13151,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 3394b7d3099d10144ac647e51a24ef0c,
         type: 3}
       propertyPath: m_Name
-      value: ally2
+      value: Soldier2 NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3394b7d3099d10144ac647e51a24ef0c,
         type: 3}
@@ -13253,13 +13179,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npc: {fileID: 11400000, guid: e2c84e6d28ff7bb41bb35480000f5404, type: 2}
-  player: {fileID: 0}
-  dialogueUI: {fileID: 0}
-  HUDUI: {fileID: 0}
-  interact: {fileID: 0}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  player: {fileID: 1514603346}
+  dialogueUI: {fileID: 1983546301}
+  HUDUI: {fileID: 826369892}
+  interact: {fileID: 1942220622}
+  npcName: {fileID: 1165081176}
+  npcDialogueBox: {fileID: 386533082}
+  playerResponse: {fileID: 1959040522}
 --- !u!136 &2027318023
 CapsuleCollider:
   m_ObjectHideFlags: 0
