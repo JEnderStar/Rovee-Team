@@ -17,7 +17,9 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject npc1;
     [SerializeField] GameObject npc2;
     [SerializeField] GameObject npc3;
-    // [SerializeField] GameObject door;
+    [SerializeField] GameObject door;
+    [SerializeField] GameObject imageToEnable;
+    [SerializeField] Image image;
 
     /*
     [SerializeField] GameObject HUD;
@@ -55,9 +57,8 @@ public class InteractEnabler : MonoBehaviour
             interact.SetActive(false);
         }
 
-        /*
         checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
-        if(checkDoor <= 1f)
+        if(checkDoor <= 2f)
         {
             OpenDoor.SetActive(true);
         }
@@ -65,7 +66,6 @@ public class InteractEnabler : MonoBehaviour
         {
             OpenDoor.SetActive(false);
         }
-        */
     }
 
     public void openTheDoor()
@@ -80,7 +80,8 @@ public class InteractEnabler : MonoBehaviour
         video.SetActive(true);
         StartCoroutine(finishCut());
         */
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        imageToEnable.SetActive(true);
+        StartCoroutine(FadeTextToFullAlpha());
     }
 
     /*
@@ -119,4 +120,24 @@ public class InteractEnabler : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     */
+
+    public IEnumerator FadeTextToFullAlpha()
+    {
+        /*image.color = new Color(0, 0, 0, 0);
+        for (float i = 0; i <= 250; i += 25)
+        {
+            image.color = new Color(0, 0, 0, i);
+        }
+        */
+        float targetAlpha = 1.0f;
+        Color curColor = image.color;
+        while (Mathf.Abs(curColor.a - targetAlpha) > 0.0001f)
+        {
+            Debug.Log(image.material.color.a);
+            curColor.a = Mathf.Lerp(curColor.a, targetAlpha, 10f * Time.deltaTime);
+            image.color = curColor;
+            yield return null;
+        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
