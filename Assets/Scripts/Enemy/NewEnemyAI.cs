@@ -12,6 +12,7 @@ public class NewEnemyAI : MonoBehaviour
     public LayerMask whatIsGround, whatIsPlayer;
 
     public float health;
+    [SerializeField] AudioSource fire;
 
     EnemyStats stats = null;
     private Animator anim = null;
@@ -141,6 +142,7 @@ public class NewEnemyAI : MonoBehaviour
     {
         int chance = Random.Range(0, 100);
         anim.SetTrigger("attack");
+        fire.Play();
         if (chance >= 85)
         {
             stats.DealDamage(statsToDamage);

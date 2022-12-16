@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2918,6 +2918,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6637277307965370921, guid: 2e8ba3b1ce6f8f042ae5893a401359fb,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6637277307965370921, guid: 2e8ba3b1ce6f8f042ae5893a401359fb,
+        type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2299533222647520047, guid: 6117f235567b0de448175e0c56f3a359,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e8ba3b1ce6f8f042ae5893a401359fb, type: 3}
 --- !u!1001 &378064539
@@ -17624,7 +17635,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 623107083}
-  target: {fileID: 10305479}
+  target: {fileID: 1065317856}
   meter: {fileID: 1367372510}
   offset: {x: 0, y: 3, z: 0}
 --- !u!1 &2007627970
