@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1703217755}
-  m_IndirectSpecularColor: {r: 0.42847112, g: 0.57723874, b: 0.6163741, a: 1}
+  m_IndirectSpecularColor: {r: 0.4284708, g: 0.5772381, b: 0.61637294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12549,7 +12549,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -61.88806, y: -73.84027}
+  m_AnchoredPosition: {x: -61.88794, y: -73.84027}
   m_SizeDelta: {x: -1844.7, y: -789.17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1004991133
@@ -16500,7 +16500,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -60.621704, y: 114.8981}
+  m_AnchoredPosition: {x: -60.621582, y: 114.8981}
   m_SizeDelta: {x: -1784.1716, y: -782.9785}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1295163023
@@ -19006,10 +19006,10 @@ RectTransform:
   m_Father: {fileID: 1086319814}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7526158, y: 0.20500001}
-  m_AnchorMax: {x: 0.89358866, y: 0.52833337}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 2}
+  m_AnchorMin: {x: 0.7325349, y: 0.155}
+  m_AnchorMax: {x: 0.8735861, y: 0.48166668}
+  m_AnchoredPosition: {x: 0.5, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1488241330
 MonoBehaviour:
@@ -22463,10 +22463,10 @@ RectTransform:
   m_Father: {fileID: 1086319814}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7526158, y: 0.20500001}
-  m_AnchorMax: {x: 0.89358866, y: 0.52833337}
-  m_AnchoredPosition: {x: -0.49993896, y: -0.000015258789}
-  m_SizeDelta: {x: -1, y: 2}
+  m_AnchorMin: {x: 0.8168279, y: 0.42166668}
+  m_AnchorMax: {x: 0.9547582, y: 0.7483334}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1703217754
 GameObject:
