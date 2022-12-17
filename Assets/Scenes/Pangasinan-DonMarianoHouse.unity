@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1703217755}
-  m_IndirectSpecularColor: {r: 0.003786215, g: 0.0000004446602, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.0037862165, g: 0.0000004446602, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8179,6 +8179,82 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!1 &598606965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 598606966}
+  - component: {fileID: 598606968}
+  - component: {fileID: 598606967}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &598606966
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598606965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 790152112}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &598606967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598606965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &598606968
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 598606965}
+  m_CullTransparentMesh: 1
 --- !u!1 &599084177
 GameObject:
   m_ObjectHideFlags: 0
@@ -8473,9 +8549,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 60619401}
   HUDUI: {fileID: 935960213}
   interact: {fileID: 1488241328}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1176813295}
+  npcDialogueBox: {fileID: 1649067388}
+  playerResponse: {fileID: 1515733443}
 --- !u!1001 &617987201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10331,6 +10407,7 @@ RectTransform:
   - {fileID: 1101656496}
   - {fileID: 599084178}
   - {fileID: 1030149287}
+  - {fileID: 598606966}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -18115,7 +18192,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436528898}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
@@ -18127,7 +18204,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436528898}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -18178,8 +18255,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436528898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81.7422, y: 1.0898, z: 85.1202}
-  m_LocalScale: {x: 0.70195407, y: 2.219464, z: 1.2524116}
+  m_LocalPosition: {x: 81.362, y: 1.0898, z: 85.1202}
+  m_LocalScale: {x: 0.01572377, y: 2.219464, z: 1.2524116}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -21757,9 +21834,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 60619401}
   HUDUI: {fileID: 935960213}
   interact: {fileID: 1488241328}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1176813295}
+  npcDialogueBox: {fileID: 1649067388}
+  playerResponse: {fileID: 1515733443}
 --- !u!1 &1657076026
 GameObject:
   m_ObjectHideFlags: 0
@@ -22176,7 +22253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   img: {fileID: 593302349}
-  target: {fileID: 0}
+  target: {fileID: 1436528902}
   meter: {fileID: 64033836}
   offset: {x: 0, y: 3, z: 0}
 --- !u!1001 &1688490635
@@ -22313,7 +22390,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1837914303}
         m_TargetAssemblyTypeName: InteractEnabler, Assembly-CSharp
         m_MethodName: openTheDoor
         m_Mode: 1
@@ -22345,7 +22422,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bd645e0bd7c194d4cbbb236d38c2a45d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1906a38a44dc09a4bb87d437aa828c93, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -23872,6 +23949,9 @@ MonoBehaviour:
   npc1: {fileID: 615779667}
   npc2: {fileID: 1653951965}
   npc3: {fileID: 2120471352}
+  door: {fileID: 1436528898}
+  imageToEnable: {fileID: 598606965}
+  image: {fileID: 598606967}
   interact: {fileID: 1488241328}
   OpenDoor: {fileID: 1698803155}
 --- !u!4 &1840658688 stripped
@@ -26465,9 +26545,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 60619401}
   HUDUI: {fileID: 935960213}
   interact: {fileID: 1488241328}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1176813295}
+  npcDialogueBox: {fileID: 1649067388}
+  playerResponse: {fileID: 1515733443}
 --- !u!1001 &2128030832
 PrefabInstance:
   m_ObjectHideFlags: 0

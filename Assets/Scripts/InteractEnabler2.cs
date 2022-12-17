@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class InteractEnabler : MonoBehaviour
+public class InteractEnabler2 : MonoBehaviour
 {
     bool fadeOut = false;
     bool isInteractActive = false;
@@ -14,14 +14,17 @@ public class InteractEnabler : MonoBehaviour
     float checkDistance2;
     float checkDistance3;
 
-    float checkDoor;
+    // float checkDoor;
 
     [SerializeField] GameObject npc1;
     [SerializeField] GameObject npc2;
     [SerializeField] GameObject npc3;
+
+    /*
     [SerializeField] GameObject door;
     [SerializeField] GameObject imageToEnable;
     [SerializeField] Image image;
+    */
 
     /*
     [SerializeField] GameObject HUD;
@@ -37,7 +40,7 @@ public class InteractEnabler : MonoBehaviour
     [SerializeField] GameObject video4;
     */
     [SerializeField] GameObject interact;
-    [SerializeField] GameObject OpenDoor;
+    // [SerializeField] GameObject OpenDoor;
     
     void Update()
     {
@@ -60,7 +63,7 @@ public class InteractEnabler : MonoBehaviour
             interact.SetActive(false);
             isInteractActive = false;
         }
-
+        /*
         checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
         if(checkDoor <= 2f)
         {
@@ -83,69 +86,20 @@ public class InteractEnabler : MonoBehaviour
             interact.transform.position = new Vector3(900f, 180f, 0f);
             OpenDoor.transform.position = new Vector3(900f, 180f, 0f);
         }
+        */
     }
 
     public void openTheDoor()
     {
         /*
-        Camera.main.transform.rotation = Quaternion.Euler(270, 0, 0);
-        player.gameObject.GetComponent<PlayerMovementController>().enabled = false;
-        lights.SetActive(false);
-        HUD.SetActive(false);
-        walls.SetActive(false);
-        deco.SetActive(false);
-        video.SetActive(true);
-        StartCoroutine(finishCut());
-        */
         imageToEnable.SetActive(true);
         StartCoroutine(FadeTextToFullAlpha());
+        */
     }
 
     /*
-    IEnumerator finishCut()
-    {
-        yield return new WaitForSeconds(39);
-        video.SetActive(false);
-        video1.SetActive(true);
-        StartCoroutine(finishCut1());
-    }
-
-    IEnumerator finishCut1()
-    {
-        yield return new WaitForSeconds(35);
-        video1.SetActive(false);
-        video2.SetActive(true);
-        StartCoroutine(finishCut2());
-    }
-    IEnumerator finishCut2()
-    {
-        yield return new WaitForSeconds(31);
-        video2.SetActive(false);
-        video3.SetActive(true);
-        StartCoroutine(finishCut3());
-    }
-    IEnumerator finishCut3()
-    {
-        yield return new WaitForSeconds(95);
-        video3.SetActive(false);
-        video4.SetActive(true);
-        StartCoroutine(finishCut4());
-    }
-    IEnumerator finishCut4()
-    {
-        yield return new WaitForSeconds(98);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-    */
-
     public IEnumerator FadeTextToFullAlpha()
     {
-        /*image.color = new Color(0, 0, 0, 0);
-        for (float i = 0; i <= 250; i += 25)
-        {
-            image.color = new Color(0, 0, 0, i);
-        }
-        */
         float targetAlpha = 1.0f;
         Color curColor = image.color;
         while (Mathf.Abs(curColor.a - targetAlpha) > 0.0001f)
@@ -157,4 +111,5 @@ public class InteractEnabler : MonoBehaviour
         }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    */
 }
