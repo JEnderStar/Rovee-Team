@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class InteractEnabler : MonoBehaviour
 {
     bool fadeOut = false;
-    bool isInteractActive = false;
-    bool isButtonActive = false;
+    // bool isInteractActive = false;
+    // bool isButtonActive = false;
 
     float checkDistance1;
     float checkDistance2;
@@ -53,36 +53,37 @@ public class InteractEnabler : MonoBehaviour
         if (checkDistance1 <= 2f || checkDistance2 <= 2f || checkDistance3 <= 2f)
         {
             interact.SetActive(true);
-            isInteractActive = true;
+            // isInteractActive = true;
         }
         else
         {
             interact.SetActive(false);
-            isInteractActive = false;
+            // isInteractActive = false;
         }
 
         checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
         if(checkDoor <= 2f)
         {
             OpenDoor.SetActive(true);
-            isButtonActive = true;
+            // isButtonActive = true;
         }
         else
         {
             OpenDoor.SetActive(false);
-            isButtonActive = false;
+            // isButtonActive = false;
         }
-
+        /*
         if (isInteractActive && isButtonActive)
         {
-            interact.transform.position = new Vector3(900f, 280f, 0f);
-            OpenDoor.transform.position = new Vector3(900f, 100f, 0f);
+            interact.transform.position = new Vector3(900f, 280f, 0f); // interact button on top
+            OpenDoor.transform.position = new Vector3(900f, 100f, 0f); // question button on bottom
         }
         else
         {
-            interact.transform.position = new Vector3(900f, 180f, 0f);
+            interact.transform.position = new Vector3(900f, 180f, 0f); // both should be on the same position
             OpenDoor.transform.position = new Vector3(900f, 180f, 0f);
         }
+        */
     }
 
     public void openTheDoor()

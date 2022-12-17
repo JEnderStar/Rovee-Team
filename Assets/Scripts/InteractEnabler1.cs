@@ -7,9 +7,9 @@ using UnityEngine.SceneManagement;
 public class InteractEnabler1 : MonoBehaviour
 {
     // bool fadeOut = false;
-    bool isInteractActive = false;
-    bool isFakeButtonActive = false;
-    bool isButtonActive = false;
+    // bool isInteractActive = false;
+    // bool isFakeButtonActive = false;
+    // bool isButtonActive = false;
 
     float checkDistance1;
     float checkDistance2;
@@ -67,24 +67,24 @@ public class InteractEnabler1 : MonoBehaviour
         if (checkDistance1 <= 2f || checkDistance2 <= 2f || checkDistance3 <= 2f)
         {
             interact.SetActive(true);
-            isInteractActive = true;
+            // isInteractActive = true;
         }
         else
         {
             interact.SetActive(false);
-            isInteractActive = false;
+            // isInteractActive = false;
         }
 
         checkDoor = Vector3.Distance(this.transform.position, door.transform.position);
         if(checkDoor <= 2f)
         {
             OpenDoor.SetActive(true);
-            isButtonActive = true;
+            // isButtonActive = true;
         }
         else
         {
             OpenDoor.SetActive(false);
-            isButtonActive = false;
+            // isButtonActive = false;
         }
 
         checkFakeDoor = Vector3.Distance(this.transform.position, fakeDoor.transform.position);
@@ -98,14 +98,14 @@ public class InteractEnabler1 : MonoBehaviour
         if(checkFakeDoor <= 2f || checkFakeDoor1 <= 2f || checkFakeDoor2 <= 2f || checkFakeDoor3 <= 2f || checkFakeDoor4 <= 2f || checkFakeDoor5 <= 2f || checkFakeDoor6 <= 2f || checkFakeDoor7 <= 2f)
         {
             fakeDoorButton.SetActive(true);
-            isFakeButtonActive = true;
+            // isFakeButtonActive = true;
         }
         else
         {
             fakeDoorButton.SetActive(false);
-            isFakeButtonActive = false;
+            // isFakeButtonActive = false;
         }
-
+        /*
         if (isInteractActive && (isButtonActive || isFakeButtonActive))
         {
             interact.transform.position = new Vector3(900f, 280f, 0f);
@@ -118,6 +118,7 @@ public class InteractEnabler1 : MonoBehaviour
             OpenDoor.transform.position = new Vector3(900f, 180f, 0f);
             fakeDoorButton.transform.position = new Vector3(900f, 180f, 0f);
         }
+        */
     }
 
     public void openTheDoor()
