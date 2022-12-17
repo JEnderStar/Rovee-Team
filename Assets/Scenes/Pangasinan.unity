@@ -21842,9 +21842,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 60619401}
   HUDUI: {fileID: 935960213}
   interact: {fileID: 1488241328}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1176813295}
+  npcDialogueBox: {fileID: 1649067388}
+  playerResponse: {fileID: 1515733443}
 --- !u!1 &1657076026
 GameObject:
   m_ObjectHideFlags: 0
@@ -26651,9 +26651,9 @@ MonoBehaviour:
   dialogueUI: {fileID: 60619401}
   HUDUI: {fileID: 935960213}
   interact: {fileID: 1488241328}
-  npcName: {fileID: 0}
-  npcDialogueBox: {fileID: 0}
-  playerResponse: {fileID: 0}
+  npcName: {fileID: 1176813295}
+  npcDialogueBox: {fileID: 1649067388}
+  playerResponse: {fileID: 1515733443}
 --- !u!1001 &2128030832
 PrefabInstance:
   m_ObjectHideFlags: 0
