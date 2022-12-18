@@ -9,4 +9,9 @@ public class SkipButton : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
+    public void SkipFinalScene()
+    {
+        SceneManager.LoadScene(0);
+    }
 }

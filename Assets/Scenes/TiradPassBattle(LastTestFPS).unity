@@ -6174,10 +6174,10 @@ RectTransform:
   m_Father: {fileID: 2046172993}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 963, y: 349}
-  m_SizeDelta: {x: 80, y: 80}
+  m_AnchorMin: {x: 0.9306947, y: 0.85344446}
+  m_AnchorMax: {x: 0.96044445, y: 0.92700005}
+  m_AnchoredPosition: {x: 1.5, y: 0.5}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &513952811
 MonoBehaviour:
@@ -6225,7 +6225,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1304909665963353167}
         m_TargetAssemblyTypeName: SkipButton, Assembly-CSharp
-        m_MethodName: SkipScene
+        m_MethodName: SkipFinalScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19305,7 +19305,7 @@ PrefabInstance:
     - target: {fileID: 3881087803815115471, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -1.0679932
+      value: -1.0681763
       objectReference: {fileID: 0}
     - target: {fileID: 3881087803815115471, guid: ec536a7718376554185e4a856d5ae230,
         type: 3}
@@ -21967,7 +21967,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2046172993
 RectTransform:
   m_ObjectHideFlags: 0
