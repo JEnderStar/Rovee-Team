@@ -45,6 +45,7 @@ public class InteractEnabler1 : MonoBehaviour
     // [SerializeField] GameObject player;
     [SerializeField] GameObject ground;
     [SerializeField] GameObject ground1;
+    [SerializeField] AudioSource audioSource;
 
     [SerializeField] GameObject hud;
     [SerializeField] GameObject panel;
@@ -128,6 +129,7 @@ public class InteractEnabler1 : MonoBehaviour
         ground1.SetActive(false);
         hud.SetActive(false);
         panel.SetActive(false);
+        audioSource.Stop();
         StartCoroutine(finishCut());
     }
 
