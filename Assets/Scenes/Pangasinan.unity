@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1703217755}
-  m_IndirectSpecularColor: {r: 0.42847112, g: 0.57723874, b: 0.6163741, a: 1}
+  m_IndirectSpecularColor: {r: 0.4284708, g: 0.5772381, b: 0.61637294, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -207,9 +207,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0014038086, y: -0.0008239746}
-  m_SizeDelta: {x: -712.7, y: -300}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 720.0014, y: 299.99918}
+  m_SizeDelta: {x: 727.3, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &399346
 PrefabInstance:
@@ -1044,8 +1044,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278255607
-  m_fontColor: {r: 0.96735287, g: 1, b: 0, a: 1}
+    rgba: 4281707519
+  m_fontColor: {r: 1, g: 0.67058825, b: 0.20784314, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1129,7 +1129,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 15.8}
+  m_AnchoredPosition: {x: 0, y: 70.7}
   m_SizeDelta: {x: 13.9171, y: 5.413}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &64533353
@@ -7606,7 +7606,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ba2fe95b82219ac448ccd399b7a57d0a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f0d130542e5cc547adaa89f72ed756a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
