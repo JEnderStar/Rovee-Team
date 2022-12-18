@@ -11,6 +11,7 @@ public class TPBBoxTrigger : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject hands;
     [SerializeField] GameObject hud;
+    [SerializeField] AudioSource audioSource;
     [SerializeField] GameObject video;
 
     private void OnTriggerEnter(Collider other)
@@ -34,6 +35,7 @@ public class TPBBoxTrigger : MonoBehaviour
         hands.SetActive(false);
         player.transform.position = new Vector3(-30f, -30f, -30f);
         Camera.main.transform.rotation = Quaternion.Euler(90, 0, 0);
+        audioSource.Stop();
         StartCoroutine(FadeOut());
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
