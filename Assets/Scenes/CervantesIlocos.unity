@@ -9,16 +9,16 @@ OcclusionCullingSettings:
     smallestHole: 0.25
     backfaceThreshold: 100
   m_SceneGUID: f7543ae1c5b9d814fa9f2c2f960fe62b
-  m_OcclusionCullingData: {fileID: 36300000, guid: 3db30cd4463f7d1448d9f2989caf4d0f,
+  m_OcclusionCullingData: {fileID: 36300000, guid: f352a476c4ca2e949b87cc57259026d7,
     type: 2}
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.45098042, g: 0.69803923, b: 0.85098046, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.4784314, g: 0.73333335, b: 0.8862746, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.02
+  m_FogDensity: 0.006
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -501,7 +501,7 @@ PrefabInstance:
     - target: {fileID: 8139701784888517170, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8916519271510898824, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
@@ -666,7 +666,7 @@ PrefabInstance:
     - target: {fileID: 8874214115969718196, guid: 0468f27d1edbdac47ac2c1f1af58674a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0468f27d1edbdac47ac2c1f1af58674a, type: 3}
@@ -1104,7 +1104,7 @@ PrefabInstance:
     - target: {fileID: 8139701784888517170, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8916519271510898824, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
@@ -1647,7 +1647,7 @@ PrefabInstance:
     - target: {fileID: 5395795509339391793, guid: 343d63e58c0d2c14b851888112f2b650,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343d63e58c0d2c14b851888112f2b650, type: 3}
@@ -2343,10 +2343,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 94553359}
     m_Modifications:
+    - target: {fileID: 2075287451056711968, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5450150091740242845, guid: 27ff679881fa3c5489c4195dfc222158,
         type: 3}
       propertyPath: m_Name
       value: EA03_Environment_Rock_Flat_04c_Flat_PRE (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885767634034409211, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937053420148946297, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9077439876574187918, guid: 27ff679881fa3c5489c4195dfc222158,
         type: 3}
@@ -2591,7 +2606,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &330004058
 Transform:
@@ -3996,7 +4011,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!65 &557130290
 BoxCollider:
@@ -4838,7 +4853,7 @@ PrefabInstance:
     - target: {fileID: 7640444777768187687, guid: 39522471a34a22d4db16898828703cb6,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39522471a34a22d4db16898828703cb6, type: 3}
@@ -4849,6 +4864,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 94553359}
     m_Modifications:
+    - target: {fileID: 1077907896631242, guid: d4c3b8efab3e0cc4f9c5e7d47142f18c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1209493513634016, guid: d4c3b8efab3e0cc4f9c5e7d47142f18c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
+    - target: {fileID: 1228148352045944, guid: d4c3b8efab3e0cc4f9c5e7d47142f18c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 125
+      objectReference: {fileID: 0}
     - target: {fileID: 1598535351202878, guid: d4c3b8efab3e0cc4f9c5e7d47142f18c, type: 3}
       propertyPath: m_Name
       value: EA03_Environment_Rock_CatHead_01b_PRE
@@ -5055,7 +5082,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &740207078
 Transform:
@@ -5275,7 +5302,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &785568152
 Transform:
@@ -6470,7 +6497,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &903561362
 Transform:
@@ -7038,6 +7065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EA03_Env_Rock_Slice_01a_PRE
       objectReference: {fileID: 0}
+    - target: {fileID: 1753524051088301878, guid: 297f0321fef58cd40858728f36140997,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 3877711919997508683, guid: 297f0321fef58cd40858728f36140997,
         type: 3}
       propertyPath: m_LODs.Array.data[0].screenRelativeHeight
@@ -7107,6 +7139,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5929284037755141368, guid: 297f0321fef58cd40858728f36140997,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8179981645509292219, guid: 297f0321fef58cd40858728f36140997,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297f0321fef58cd40858728f36140997, type: 3}
@@ -8501,7 +8543,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1135520576
 Transform:
@@ -9674,7 +9716,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1252241258
 Transform:
@@ -9808,7 +9850,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1297123274
 Transform:
@@ -10450,7 +10492,7 @@ PrefabInstance:
     - target: {fileID: 5395795509339391793, guid: 343d63e58c0d2c14b851888112f2b650,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 343d63e58c0d2c14b851888112f2b650, type: 3}
@@ -11721,7 +11763,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1566517250
 Transform:
@@ -12236,7 +12278,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1706624085
 Transform:
@@ -12621,7 +12663,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 18
   m_IsActive: 1
 --- !u!4 &1737854060
 Transform:
@@ -13007,7 +13049,7 @@ PrefabInstance:
     - target: {fileID: 8874214115969718196, guid: 0468f27d1edbdac47ac2c1f1af58674a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0468f27d1edbdac47ac2c1f1af58674a, type: 3}
@@ -13608,10 +13650,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 94553359}
     m_Modifications:
+    - target: {fileID: 2279338559147194596, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5246660610424533593, guid: 1d92f26bf55fcc24583880399688e793,
         type: 3}
       propertyPath: m_Name
       value: EA03_Environment_Rock_Flat_04c_PRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6692940074094341951, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7145081703365403837, guid: 1d92f26bf55fcc24583880399688e793,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9121121707941527626, guid: 1d92f26bf55fcc24583880399688e793,
         type: 3}
@@ -14215,7 +14272,7 @@ PrefabInstance:
     - target: {fileID: 8139701784888517170, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 26
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 8916519271510898824, guid: f09c1da76fc98674ab354a7649fbd3de,
         type: 3}
@@ -14582,10 +14639,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 94553359}
     m_Modifications:
+    - target: {fileID: 2075287451056711968, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 5450150091740242845, guid: 27ff679881fa3c5489c4195dfc222158,
         type: 3}
       propertyPath: m_Name
       value: EA03_Environment_Rock_Flat_04c_Flat_PRE
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885767634034409211, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937053420148946297, guid: 27ff679881fa3c5489c4195dfc222158,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 9077439876574187918, guid: 27ff679881fa3c5489c4195dfc222158,
         type: 3}
