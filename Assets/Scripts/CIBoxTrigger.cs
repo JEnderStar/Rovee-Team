@@ -12,6 +12,7 @@ public class CIBoxTrigger : MonoBehaviour
     [SerializeField] GameObject hud;
     [SerializeField] GameObject video;
     [SerializeField] AudioSource audioSource;
+    [SerializeField] GameObject skip;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -34,6 +35,7 @@ public class CIBoxTrigger : MonoBehaviour
         player.transform.position = new Vector3(-30f, -30f, -30f);
         Camera.main.transform.rotation = Quaternion.Euler(90, 0, 0);
         audioSource.Stop();
+        skip.SetActive(true);
         StartCoroutine(FadeOut());
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
