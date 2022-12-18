@@ -803,16 +803,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1406781684}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f0fa1391cfc37c43a0bb9752258b4d1, type: 3}
+  m_Script: {fileID: 11500000, guid: c4f63e68edbdefb4e94680ca9c1e271a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 288529321}
   LoadingBarFill: {fileID: 1839164042}
-  image: {fileID: 0}
-  image1: {fileID: 0}
-  image2: {fileID: 0}
-  image3: {fileID: 0}
-  image4: {fileID: 0}
   textToEnable: {fileID: 288529320}
   sliderToEnable: {fileID: 1839164040}
   textToDisable: {fileID: 323673554}
@@ -1005,7 +1000,7 @@ RectTransform:
   m_AnchorMin: {x: 0.20817976, y: 0}
   m_AnchorMax: {x: 0.7918203, y: 0.16700001}
   m_AnchoredPosition: {x: 0.5, y: 1.5}
-  m_SizeDelta: {x: -481, y: -57}
+  m_SizeDelta: {x: -623.69, y: -74.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1839164042
 MonoBehaviour:
