@@ -57,37 +57,6 @@ public class TouchToContinue : MonoBehaviour
                 }
             }
         }
-        if (Input.GetMouseButtonDown(0))
-        {
-            if (touchesa == 1)
-            {
-                image.SetActive(false);
-                image1.SetActive(true);
-                touchesa++;
-            }
-            else if (touchesa == 2)
-            {
-                image1.SetActive(false);
-                image2.SetActive(true);
-                touchesa++;
-            }
-            else if (touchesa == 3)
-            {
-                image2.SetActive(false);
-                image3.SetActive(true);
-                touchesa++;
-            }
-            else if (touchesa == 4)
-            {
-                image3.SetActive(false);
-                image4.SetActive(true);
-                touchesa++;
-            }
-            else if (touchesa == 5)
-            {
-                StartCoroutine(LoadSceneAsync());
-            }
-        }
     }
     IEnumerator LoadSceneAsync()
     {
