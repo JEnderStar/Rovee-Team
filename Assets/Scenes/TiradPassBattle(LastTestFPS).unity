@@ -39,7 +39,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571328, b: 0.3069217, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 10696282}
-  range: 35
+  range: 50
 --- !u!195 &10696282
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 61254442}
-  range: 35
+  range: 50
 --- !u!136 &61254444
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3888,7 +3888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 352494730}
-  range: 35
+  range: 50
 --- !u!136 &352494732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -6838,7 +6838,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 559669556}
-  range: 35
+  range: 50
 --- !u!136 &559669558
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -7264,7 +7264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 577501056}
-  range: 35
+  range: 50
 --- !u!136 &577501058
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -10314,7 +10314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 790455205}
-  range: 35
+  range: 50
 --- !u!195 &790455205
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -11038,7 +11038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 868039760}
-  range: 35
+  range: 50
 --- !u!136 &868039762
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -13358,7 +13358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myTarget: {fileID: 1280311248}
   myAgent: {fileID: 1133832996}
-  range: 35
+  range: 50
 --- !u!136 &1133832998
 CapsuleCollider:
   m_ObjectHideFlags: 0
